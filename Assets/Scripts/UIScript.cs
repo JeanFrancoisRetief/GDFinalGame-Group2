@@ -8,14 +8,14 @@ public class UIScript : MonoBehaviour
     [Header("Panels")]
     public GameObject ResourcesApp;
     public GameObject TextingApp;
-    public GameObject MapApp;
+    public GameObject PowerApp;
 
     // Start is called before the first frame update
     void Start()
     {
         ResourcesApp.SetActive(false);
         TextingApp.SetActive(false);
-        MapApp.SetActive(false);
+        PowerApp.SetActive(false);
     }
 
     // Update is called once per frame
@@ -25,21 +25,21 @@ public class UIScript : MonoBehaviour
         {
             ResourcesApp.SetActive(true);
             TextingApp.SetActive(false);
-            MapApp.SetActive(false);
+            PowerApp.SetActive(false);
         }
 
         if (Input.GetKeyDown(KeyCode.T))
         {
             ResourcesApp.SetActive(false);
             TextingApp.SetActive(true);
-            MapApp.SetActive(false);
+            PowerApp.SetActive(false);
         }
 
-        if (Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKeyDown(KeyCode.Y))
         {
             ResourcesApp.SetActive(false);
             TextingApp.SetActive(false);
-            MapApp.SetActive(true);
+            PowerApp.SetActive(true);
         }
     }
 }

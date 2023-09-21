@@ -17,6 +17,16 @@ public class ResourceManagementScript : MonoBehaviour
     public Text NoiseMeterText; //can be replaced by images
     public Text SightMeterText; //can be replaced by images
     public Text PowerLeftText;
+    public GameObject FlashLightDebug;
+    public GameObject EnvDebug;
+    public bool EnvDebugActive;
+
+    [Space(10)]
+    public GameObject PowerBar1;
+    public GameObject PowerBar2;
+    public GameObject PowerBar3;
+    public GameObject PowerBar4;
+    public GameObject PowerBar5;
 
     [Header("Stamina")]
     public bool isWalking;
@@ -75,7 +85,7 @@ public class ResourceManagementScript : MonoBehaviour
         powerCheckerOther = 0;
 
 
-    noiseChecker1 = 0;
+        noiseChecker1 = 0;
         noiseChecker2 = 0;
         noiseChecker3 = 0;
         noiseChecker4 = 0;
@@ -83,6 +93,15 @@ public class ResourceManagementScript : MonoBehaviour
 
         StopPosition = new Vector3(0, 0, 0);
 
+        PowerBar1.SetActive(false);
+        PowerBar2.SetActive(false);
+        PowerBar3.SetActive(false);
+        PowerBar4.SetActive(false);
+        PowerBar5.SetActive(false);
+
+        FlashLightDebug.SetActive(false);
+        EnvDebug.SetActive(false);
+        EnvDebugActive = false;
 
     }
 
@@ -93,16 +112,36 @@ public class ResourceManagementScript : MonoBehaviour
         Power();
         Noise();
         Sight();
+
+        DebugExtras();
+    }
+
+    public void DebugExtras()
+    {
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            EnvDebug.SetActive(!EnvDebugActive);
+            EnvDebugActive = !EnvDebugActive;
+        }
+
+        if(EnvDebugActive)
+        {
+            powerCheckerOther = 0.1f;
+        }
+        else
+        {
+            powerCheckerOther = 0;
+        }
         
     }
 
     public void FlashLightOn()
     {
-        //
+        FlashLightDebug.SetActive(true);
     }
     public void FlashLightOff()
     {
-        //
+        FlashLightDebug.SetActive(false);
     }
 
     public void Power()
@@ -138,6 +177,41 @@ public class ResourceManagementScript : MonoBehaviour
 
         powerDrainValue = powerCheckerConstant + powerCheckerFlashlight + powerCheckerOther;
         powerLeft -= powerDrainValue;
+
+        if(isFlashlightOn && powerCheckerOther != 0)
+        {
+            PowerBar1.SetActive(false);
+            PowerBar2.SetActive(false);
+            PowerBar3.SetActive(false);
+            PowerBar4.SetActive(false);
+            PowerBar5.SetActive(true);
+        }
+        else if(isFlashlightOn)
+        {
+            PowerBar1.SetActive(false);
+            PowerBar2.SetActive(true);
+            PowerBar3.SetActive(false);
+            PowerBar4.SetActive(false);
+            PowerBar5.SetActive(false);
+        }
+        else if(powerCheckerOther != 0)
+        {
+            PowerBar1.SetActive(false);
+            PowerBar2.SetActive(false);
+            PowerBar3.SetActive(true);
+            PowerBar4.SetActive(false);
+            PowerBar5.SetActive(false);
+        }
+        else
+        {
+            PowerBar1.SetActive(true);
+            PowerBar2.SetActive(false);
+            PowerBar3.SetActive(false);
+            PowerBar4.SetActive(false);
+            PowerBar5.SetActive(false);
+        }
+
+
 
     }
 
