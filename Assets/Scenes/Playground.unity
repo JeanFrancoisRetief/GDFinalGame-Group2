@@ -3062,6 +3062,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5393215579111688471}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &900648094 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5128078261729981829, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+    type: 3}
+  m_PrefabInstance: {fileID: 5393215579111688471}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900648088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62fe4bb19b189094db9c465db60710af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &947092946
 GameObject:
   m_ObjectHideFlags: 0
@@ -3148,9 +3160,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 989684790}
-  - component: {fileID: 989684792}
   - component: {fileID: 989684791}
-  - component: {fileID: 989684793}
   m_Layer: 0
   m_Name: ScriptHolder
   m_TagString: Untagged
@@ -3184,71 +3194,75 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44fec2d467ff62429b665554389dd86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &989684792
-MonoBehaviour:
+--- !u!1001 &1005969159
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 989684789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62fe4bb19b189094db9c465db60710af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerPrefab: {fileID: 900648088}
-  StopPosition: {x: 0, y: 0, z: 0}
-  staminaFrameCounter: 0
-  StaminaSlider: {fileID: 1404044096}
-  NoiseMeterText: {fileID: 2058468123}
-  SightMeterText: {fileID: 342681996}
-  PowerLeftText: {fileID: 1140453233}
-  FlashLightDebug: {fileID: 1689626469}
-  EnvDebug: {fileID: 497947644}
-  EnvDebugActive: 0
-  PowerBar1: {fileID: 1664117259}
-  PowerBar2: {fileID: 1247172644}
-  PowerBar3: {fileID: 1831037210}
-  PowerBar4: {fileID: 477282146}
-  PowerBar5: {fileID: 174031122}
-  isWalking: 0
-  isSprinting: 0
-  staminaValue: 0
-  staminaIncreaseValue: 1
-  staminaDecreaseValue: 0
-  walkDecreaseValue: 0.02
-  sprintDecreaseValue: 0.1
-  noiseLevel: 0
-  noiseChecker1: 0
-  noiseChecker2: 0
-  noiseChecker3: 0
-  noiseChecker4: 0
-  noiseChecker5: 0
-  sightLevel: 0
-  sightChecker1: 0
-  sightChecker2: 0
-  sightChecker3: 0
-  isFlashlightOn: 0
-  powerLeft: 100
-  powerDrainValue: 0
-  powerCheckerConstant: 0.01
-  powerCheckerFlashlight: 0
-  powerCheckerOther: 0
---- !u!114 &989684793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 989684789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb8d58c3fd55e4c4980510664177a368, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ResourcesApp: {fileID: 1897613619}
-  TextingApp: {fileID: 1410673467}
-  PowerApp: {fileID: 1298165363}
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 199865583852532701, guid: c375ae45ba37ba14eabf37bfc961946e,
+        type: 3}
+      propertyPath: m_Name
+      value: LightTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805780729104717835, guid: c375ae45ba37ba14eabf37bfc961946e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805780729104717835, guid: c375ae45ba37ba14eabf37bfc961946e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.4078264
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805780729104717835, guid: c375ae45ba37ba14eabf37bfc961946e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805780729104717835, guid: c375ae45ba37ba14eabf37bfc961946e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.09465
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805780729104717835, guid: c375ae45ba37ba14eabf37bfc961946e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805780729104717835, guid: c375ae45ba37ba14eabf37bfc961946e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805780729104717835, guid: c375ae45ba37ba14eabf37bfc961946e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805780729104717835, guid: c375ae45ba37ba14eabf37bfc961946e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805780729104717835, guid: c375ae45ba37ba14eabf37bfc961946e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805780729104717835, guid: c375ae45ba37ba14eabf37bfc961946e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805780729104717835, guid: c375ae45ba37ba14eabf37bfc961946e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c375ae45ba37ba14eabf37bfc961946e, type: 3}
 --- !u!1 &1028513131
 GameObject:
   m_ObjectHideFlags: 0
@@ -7216,6 +7230,106 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 941448445061100211, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: PowerApp
+      value: 
+      objectReference: {fileID: 1298165363}
+    - target: {fileID: 941448445061100211, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: TextingApp
+      value: 
+      objectReference: {fileID: 1410673467}
+    - target: {fileID: 941448445061100211, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: ResourcesApp
+      value: 
+      objectReference: {fileID: 1897613619}
+    - target: {fileID: 5113664155641450291, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: resourceManagementScript
+      value: 
+      objectReference: {fileID: 900648094}
+    - target: {fileID: 5128078261729981829, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: EnvDebug
+      value: 
+      objectReference: {fileID: 497947644}
+    - target: {fileID: 5128078261729981829, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: PowerBar1
+      value: 
+      objectReference: {fileID: 1664117259}
+    - target: {fileID: 5128078261729981829, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: PowerBar2
+      value: 
+      objectReference: {fileID: 1247172644}
+    - target: {fileID: 5128078261729981829, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: PowerBar3
+      value: 
+      objectReference: {fileID: 1831037210}
+    - target: {fileID: 5128078261729981829, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: PowerBar4
+      value: 
+      objectReference: {fileID: 477282146}
+    - target: {fileID: 5128078261729981829, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: PowerBar5
+      value: 
+      objectReference: {fileID: 174031122}
+    - target: {fileID: 5128078261729981829, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: PlayerPrefab
+      value: 
+      objectReference: {fileID: 900648088}
+    - target: {fileID: 5128078261729981829, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: PowerLeftText
+      value: 
+      objectReference: {fileID: 1140453233}
+    - target: {fileID: 5128078261729981829, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: StaminaSlider
+      value: 
+      objectReference: {fileID: 1404044096}
+    - target: {fileID: 5128078261729981829, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: NoiseMeterText
+      value: 
+      objectReference: {fileID: 2058468123}
+    - target: {fileID: 5128078261729981829, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: SightMeterText
+      value: 
+      objectReference: {fileID: 342681996}
+    - target: {fileID: 5128078261729981829, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: FlashLightDebug
+      value: 
+      objectReference: {fileID: 1689626469}
+    - target: {fileID: 5128078261729981829, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: walkDecreaseValue
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 5128078261729981829, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: sprintDecreaseValue
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5128078261729981829, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: powerCheckerConstant
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5128078261729981829, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: staminaIncreaseValue
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
       propertyPath: m_Name

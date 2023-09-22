@@ -55,6 +55,10 @@ public class ResourceManagementScript : MonoBehaviour
     public int sightChecker2;
     public int sightChecker3;
 
+    [Space(10)]
+    public bool inLight1;
+    public bool inLight2;
+
     [Header("Power")]
     public bool isFlashlightOn;
 
@@ -103,6 +107,8 @@ public class ResourceManagementScript : MonoBehaviour
         EnvDebug.SetActive(false);
         EnvDebugActive = false;
 
+        inLight1 = false;
+        inLight2 = false;
     }
 
     // Update is called once per frame
@@ -296,7 +302,7 @@ public class ResourceManagementScript : MonoBehaviour
 
         //checkers
         //1 ___________________________________test
-        if (isWalking)
+        if (isFlashlightOn)
         {
             sightChecker1 = 1;
         }
@@ -305,7 +311,7 @@ public class ResourceManagementScript : MonoBehaviour
             sightChecker1 = 0;
         }
         //2 ___________________________________test
-        if (isSprinting)
+        if (inLight1)
         {
             sightChecker2 = 1;
         }
@@ -314,6 +320,14 @@ public class ResourceManagementScript : MonoBehaviour
             sightChecker2 = 0;
         }
         //3
+        if (inLight2)
+        {
+            sightChecker3 = 1;
+        }
+        else
+        {
+            sightChecker3 = 0;
+        }
 
 
         sightLevel = sightChecker1 + sightChecker2 + sightChecker3;

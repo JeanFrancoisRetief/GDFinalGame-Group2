@@ -140,6 +140,9 @@ GameObject:
   - component: {fileID: 1978471637655604388}
   - component: {fileID: 5420857361349278248}
   - component: {fileID: 8616685848737228376}
+  - component: {fileID: 941448445061100211}
+  - component: {fileID: 5128078261729981829}
+  - component: {fileID: 5113664155641450291}
   m_Layer: 8
   m_Name: PlayerCapsule
   m_TagString: Player
@@ -345,3 +348,80 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &941448445061100211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8616685848737228372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb8d58c3fd55e4c4980510664177a368, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ResourcesApp: {fileID: 0}
+  TextingApp: {fileID: 0}
+  PowerApp: {fileID: 0}
+--- !u!114 &5128078261729981829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8616685848737228372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62fe4bb19b189094db9c465db60710af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerPrefab: {fileID: 0}
+  StopPosition: {x: 0, y: 0, z: 0}
+  staminaFrameCounter: 0
+  StaminaSlider: {fileID: 0}
+  NoiseMeterText: {fileID: 0}
+  SightMeterText: {fileID: 0}
+  PowerLeftText: {fileID: 0}
+  FlashLightDebug: {fileID: 0}
+  EnvDebug: {fileID: 0}
+  EnvDebugActive: 0
+  PowerBar1: {fileID: 0}
+  PowerBar2: {fileID: 0}
+  PowerBar3: {fileID: 0}
+  PowerBar4: {fileID: 0}
+  PowerBar5: {fileID: 0}
+  isWalking: 0
+  isSprinting: 0
+  staminaValue: 0
+  staminaIncreaseValue: 0.1
+  staminaDecreaseValue: 0
+  walkDecreaseValue: 0.2
+  sprintDecreaseValue: 0.5
+  noiseLevel: 0
+  noiseChecker1: 0
+  noiseChecker2: 0
+  noiseChecker3: 0
+  noiseChecker4: 0
+  noiseChecker5: 0
+  sightLevel: 0
+  sightChecker1: 0
+  sightChecker2: 0
+  sightChecker3: 0
+  isFlashlightOn: 0
+  powerLeft: 100
+  powerDrainValue: 0
+  powerCheckerConstant: 0.1
+  powerCheckerFlashlight: 0
+  powerCheckerOther: 0
+--- !u!114 &5113664155641450291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8616685848737228372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c0f66a70e813fd428ea755550405841, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
