@@ -20,6 +20,8 @@ public class ResourceManagementScript : MonoBehaviour
     public GameObject FlashLightDebug;
     public GameObject EnvDebug;
     public bool EnvDebugActive;
+    public GameObject WalkDebug;
+    public GameObject RunDebug;
 
     [Space(10)]
     public GameObject PowerBar1;
@@ -106,6 +108,8 @@ public class ResourceManagementScript : MonoBehaviour
         FlashLightDebug.SetActive(false);
         EnvDebug.SetActive(false);
         EnvDebugActive = false;
+        WalkDebug.SetActive(false);
+        RunDebug.SetActive(false);
 
         inLight1 = false;
         inLight2 = false;
@@ -138,7 +142,25 @@ public class ResourceManagementScript : MonoBehaviour
         {
             powerCheckerOther = 0;
         }
-        
+
+        if(isWalking)
+        {
+            WalkDebug.SetActive(true);
+        }
+        else
+        {
+            WalkDebug.SetActive(false);
+        }
+
+        if (isSprinting)
+        {
+            RunDebug.SetActive(true);
+        }
+        else
+        {
+            RunDebug.SetActive(false);
+        }
+
     }
 
     public void FlashLightOn()

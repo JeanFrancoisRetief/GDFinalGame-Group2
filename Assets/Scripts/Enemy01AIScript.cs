@@ -47,6 +47,11 @@ public class Enemy01AIScript : MonoBehaviour
     public float Enemy04stamRange = 20;
     public float Enemy04powRange = 20;
 
+    [Header("Chase")]
+    public bool isChasing = false;
+    public int ChaseFrameCounter = 0;
+    public float chasetime = 5;
+
 
 
     //public Slider PlayerHealthSlider;
@@ -60,6 +65,8 @@ public class Enemy01AIScript : MonoBehaviour
         //attackRange = 10;
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         //slowdownMultiplier = 0.02f;
+        isChasing = false;
+        ChaseFrameCounter = 0;
 
         //starting ranges
         if (enemyType == 1)
@@ -125,6 +132,18 @@ public class Enemy01AIScript : MonoBehaviour
         if (Vector3.Distance(transform.position, target.position) < viewRange)
         {
             transform.Translate(direction * slowdownMultiplier);
+            isChasing = true;
+        }
+
+        if(isChasing)
+        {
+            ChaseFrameCounter++;
+        }
+        if(ChaseFrameCounter >= 60*chasetime)
+        {
+            isChasing = false;
+            ChaseFrameCounter = 0;
+            Destroy(gameObject);
         }
 
         //Attack AI
