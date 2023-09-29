@@ -8008,6 +8008,11 @@ PrefabInstance:
       propertyPath: chasetime
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1608529908207219269, guid: e933eb7037e5ca7489a95dd4d1fb5ae5,
+        type: 3}
+      propertyPath: resourceManagementScript
+      value: 
+      objectReference: {fileID: 900648094}
     - target: {fileID: 2891552944460714214, guid: e933eb7037e5ca7489a95dd4d1fb5ae5,
         type: 3}
       propertyPath: m_Name

@@ -22,6 +22,10 @@ public class Enemy01AIScript : MonoBehaviour
 
     [Header("UniqueEnemies")]
     public int enemyType = 1;
+    public float Enemy01Range = 0;
+    public float Enemy02Range = 0;
+    public float Enemy03Range = 0;
+    public float Enemy04Range = 0;
 
     [Space(10)]
     public float Enemy01viewRange = 40;
@@ -112,30 +116,84 @@ public class Enemy01AIScript : MonoBehaviour
         //unique AI's
         if(enemyType == 1)
         {
+            /*
+                Deaf (can be as loud as you want)
+                Great at seeing (greatest view radius) player
+                Faster when viewed by player, and when stamina is HIGH
+             */
+            float Range;
+            if (resourceManagementScript.staminaValue > 75)
+            {
+                Range = viewRange + staminaSenceRange;
+            }
+            else
+            {
+                Range = viewRange;
+            }
+
+            if (resourceManagementScript.sightLevel == 0)
+            {
+                Enemy01Range = 0;
+            }
+            else if(resourceManagementScript.sightLevel == 1)
+            {
+                Enemy01Range = Range / 2;
+            }
+            else if (resourceManagementScript.sightLevel == 2)
+            {
+                Enemy01Range = Range;
+            }
+            else if (resourceManagementScript.sightLevel == 3)
+            {
+                Enemy01Range = Range / 0.5f;
+            }
+
             
+
+            if (Vector3.Distance(transform.position, target.position) < Enemy01Range)
+            {
+                transform.Translate(direction * slowdownMultiplier);
+                isChasing = true;
+            }
+            else
+            {
+                isChasing = false;
+                ChaseFrameCounter = 0;
+            }
+
         }
         if (enemyType == 2)
         {
-
+            /*
+                Freezes when player looks at it
+                More active when player’s power / stamina is LOW (flashlight runs out - it will come for you)
+             */
         }
         if (enemyType == 3)
         {
-
+            /*
+                Blind (won’t react to sight-level or flashlight)
+                Great at hearing (greatest hearing radius) player’s movements
+                Moves constantly towards sounds (player or environment)
+             */
         }
         if (enemyType == 4)
         {
-
+            /*
+                More active the lower the player’s visibility is LOW (”sight” value), i.e., it will hunt you if you stick to the shadows
+                Basic hearing and sight
+             */
         }
 
 
         //temp movemnent (COMMENT OUT WHEN TESTING UNIQUE AI's ABOVE)
-        if (Vector3.Distance(transform.position, target.position) < viewRange)
-        {
-            transform.Translate(direction * slowdownMultiplier);
-            isChasing = true;
-        }
+        //if (Vector3.Distance(transform.position, target.position) < viewRange)
+        //{
+        //    transform.Translate(direction * slowdownMultiplier);
+        //    isChasing = true;
+        //}
 
-        if(isChasing)
+        if (isChasing)
         {
             ChaseFrameCounter++;
         }
