@@ -177,6 +177,12 @@ public class ResourceManagementScript : MonoBehaviour
         //display
         PowerLeftText.text = (Mathf.Floor(powerLeft)).ToString() + "%";
 
+        if(powerLeft < 0)
+        {
+            powerLeft = 0;
+            PowerLeftText.text = "0%";
+        }
+
         //input
         if(Input.GetKeyDown(KeyCode.F) && !isFlashlightOn)
         {
