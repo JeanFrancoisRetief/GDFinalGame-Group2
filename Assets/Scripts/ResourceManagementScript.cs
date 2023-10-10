@@ -63,6 +63,7 @@ public class ResourceManagementScript : MonoBehaviour
 
     [Header("Power")]
     public bool isFlashlightOn;
+    public bool CanInteract;
 
     [Space(10)]
     public float powerLeft = 100;
@@ -128,7 +129,7 @@ public class ResourceManagementScript : MonoBehaviour
 
     public void DebugExtras()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.E) && CanInteract)
         {
             EnvDebug.SetActive(!EnvDebugActive);
             EnvDebugActive = !EnvDebugActive;
