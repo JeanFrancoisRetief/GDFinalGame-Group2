@@ -6,6 +6,7 @@ public class ChargeTrigger : MonoBehaviour
 {
     [Header("Scripts")]
     public ResourceManagementScript resourceManagementScript;
+    public UIScript uIScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,13 @@ public class ChargeTrigger : MonoBehaviour
             if(resourceManagementScript.powerLeft > 100)
             {
                 resourceManagementScript.powerLeft = 100;
+            }
+            if(uIScript.isPowerOFF == true)
+            {
+                //uIScript.PhoneOff001.SetActive(false);
+                //uIScript.PhoneOff002.SetActive(false);
+                resourceManagementScript.powerLeft += 10;
+                uIScript.isPowerOFF = false;
             }
             other.enabled = false;
         }
