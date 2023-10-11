@@ -56,7 +56,8 @@ public class Enemy01AIScript : MonoBehaviour
     public int ChaseFrameCounter = 0;
     public float chasetime = 5;
 
-
+    [Header("Bools")]
+    public bool inView;
 
     //public Slider PlayerHealthSlider;
 
@@ -105,6 +106,8 @@ public class Enemy01AIScript : MonoBehaviour
         {
             Debug.Log("Enemy type not selected");
         }
+
+        inView = false;
     }
 
     // Update is called once per frame
@@ -131,6 +134,28 @@ public class Enemy01AIScript : MonoBehaviour
                 Range = viewRange;
             }
 
+            if (inView)
+            {
+                Debug.Log("Sees you");
+                if (resourceManagementScript.sightLevel == 0)
+                {
+                    resourceManagementScript.sightLevel = 1;
+                }
+                else if (resourceManagementScript.sightLevel == 1)
+                {
+                    resourceManagementScript.sightLevel = 2;
+                }
+                else if (resourceManagementScript.sightLevel == 2)
+                {
+                    resourceManagementScript.sightLevel = 3;
+                }
+                else if (resourceManagementScript.sightLevel == 3)
+                {
+                    Enemy01Range = Range * 3 ;
+                }
+            }
+            
+
             if (resourceManagementScript.sightLevel == 0)
             {
                 Enemy01Range = 0;
@@ -147,6 +172,8 @@ public class Enemy01AIScript : MonoBehaviour
             {
                 Enemy01Range = Range / 0.5f;
             }
+
+            
 
             
 
@@ -168,6 +195,27 @@ public class Enemy01AIScript : MonoBehaviour
                 Freezes when player looks at it
                 More active when player’s power / stamina is LOW (flashlight runs out - it will come for you)
              */
+            
+
+            if(inView)
+            {
+                Enemy02Range = 0;
+            }
+            else
+            {
+                Enemy02Range = Enemy02viewRange*2; //test
+            }
+
+            if (Vector3.Distance(transform.position, target.position) < Enemy02Range)
+            {
+                transform.Translate(direction * slowdownMultiplier);
+                isChasing = true;
+            }
+            else
+            {
+                isChasing = false;
+                ChaseFrameCounter = 0;
+            }
         }
         if (enemyType == 3)
         {
@@ -213,5 +261,15 @@ public class Enemy01AIScript : MonoBehaviour
             Destroy(gameObject);
         }
 
+    }
+
+    void OnBecameVisible()
+    {
+        inView = true;
+    }
+
+    void OnBecameInvisible()
+    {
+        inView = false;
     }
 }
