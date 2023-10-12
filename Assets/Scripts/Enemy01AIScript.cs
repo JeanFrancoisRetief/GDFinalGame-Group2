@@ -195,15 +195,29 @@ public class Enemy01AIScript : MonoBehaviour
                 Freezes when player looks at it
                 More active when player’s power / stamina is LOW (flashlight runs out - it will come for you)
              */
-            
+            float Range;
+            Range = Enemy02viewRange;
+            if ((resourceManagementScript.staminaValue < 30) && (resourceManagementScript.powerLeft < 30))
+            {
+                Range = Enemy02viewRange + Enemy02stamRange + Enemy03powRange;
+            }
+            else if(resourceManagementScript.staminaValue < 30)
+            {
+                Range = Enemy02viewRange + Enemy02stamRange;
+            }
+            else if (resourceManagementScript.powerLeft < 30)
+            {
+                Range = Enemy02viewRange + Enemy02powRange;
+            }
 
-            if(inView)
+            if (inView)
             {
                 Enemy02Range = 0;
             }
             else
             {
-                Enemy02Range = Enemy02viewRange*2; //test
+                //Enemy02Range = Enemy02viewRange*2; //test
+                Enemy02Range = Range;
             }
 
             if (Vector3.Distance(transform.position, target.position) < Enemy02Range)
