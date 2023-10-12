@@ -51,6 +51,11 @@ public class ResourceManagementScript : MonoBehaviour
     public int noiseChecker4;
     public int noiseChecker5;
 
+    [Space(10)]
+    public bool TRIGGERED;
+    public bool isNoiseDistracted;
+    public int distractCounter;
+
     [Header("Sight")]
     public int sightLevel = 0;
     public int sightChecker1;
@@ -64,6 +69,8 @@ public class ResourceManagementScript : MonoBehaviour
     [Header("Power")]
     public bool isFlashlightOn;
     public bool CanInteract;
+    public bool isEnvActive;
+    public int EnvCounter;
 
     [Space(10)]
     public float powerLeft = 100;
@@ -91,12 +98,18 @@ public class ResourceManagementScript : MonoBehaviour
         powerCheckerFlashlight = 0;
         powerCheckerOther = 0;
 
+        isEnvActive = false;
+        EnvCounter = 0;
+
 
         noiseChecker1 = 0;
         noiseChecker2 = 0;
         noiseChecker3 = 0;
         noiseChecker4 = 0;
         noiseChecker5 = 0;
+
+        isNoiseDistracted = false;
+        distractCounter = 0;
 
         StopPosition = new Vector3(0, 0, 0);
 
@@ -135,6 +148,7 @@ public class ResourceManagementScript : MonoBehaviour
             EnvDebugActive = !EnvDebugActive;
         }
 
+        /*
         if(EnvDebugActive)
         {
             powerCheckerOther = 0.1f;
@@ -143,6 +157,7 @@ public class ResourceManagementScript : MonoBehaviour
         {
             powerCheckerOther = 0;
         }
+        */
 
         if(isWalking)
         {
@@ -209,6 +224,33 @@ public class ResourceManagementScript : MonoBehaviour
             powerCheckerFlashlight = 0;
         }
 
+        if (Input.GetKeyDown(KeyCode.E) && CanInteract)
+        {
+            isEnvActive = true;
+            CanInteract = false;
+            TRIGGERED = true;
+        }
+
+        if(isEnvActive)
+        {
+            powerCheckerOther = 0.07f;
+            if (EnvCounter < 60*5)
+            {
+                EnvCounter++;
+                
+            }
+            else
+            {
+                
+                isEnvActive = false;
+            }
+        }
+        else
+        {
+            EnvCounter = 0;
+            powerCheckerOther = 0;
+        }
+
 
         powerDrainValue = powerCheckerConstant + powerCheckerFlashlight + powerCheckerOther;
         powerLeft -= powerDrainValue;
@@ -273,7 +315,7 @@ public class ResourceManagementScript : MonoBehaviour
         {
             NoiseMeterText.text = "[][][][]";
         }
-        else if (noiseLevel == 4)
+        else if (noiseLevel == 5)
         {
             NoiseMeterText.text = "[][][][][]";
         }
@@ -298,11 +340,36 @@ public class ResourceManagementScript : MonoBehaviour
             noiseChecker2 = 0;
         }
         //3
+        if (isEnvActive)
+        {
+            noiseChecker3 = 3;
+        }
+        else
+        {
+            noiseChecker3 = 0;
+        }
 
         //4
 
         //5
 
+        if(isNoiseDistracted)
+        {
+            distractCounter++;
+            if(distractCounter >= 60*10)
+            {
+                isNoiseDistracted = false;
+            }
+            //--------------------------------------------------------------------------------------------CHANGE NOISE SENSITIVE ENEMIES' TARGET TO NOISE SOURCE------------
+
+
+
+            //--------------------------------------------------------------------------------------------CHANGE NOISE SENSITIVE ENEMIES' TARGET TO NOISE SOURCE------------
+        }
+        else
+        {
+            distractCounter = 0;
+        }
 
 
         noiseLevel = noiseChecker1 + noiseChecker2 + noiseChecker3 + noiseChecker4 + noiseChecker5;

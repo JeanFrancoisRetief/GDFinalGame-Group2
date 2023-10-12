@@ -7,25 +7,51 @@ public class InteractTrigger : MonoBehaviour
 {
     public ResourceManagementScript resourceManagementScript;
     public GameObject Interact_E_Icon;
+    
     // Start is called before the first frame update
     void Start()
     {
         Interact_E_Icon.SetActive(false);
         resourceManagementScript.CanInteract = false;
+        resourceManagementScript.TRIGGERED = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(resourceManagementScript.CanInteract == true)
+        {
+            Interact_E_Icon.SetActive(true);
+        }
+        else
+        {
+            Interact_E_Icon.SetActive(false);
+        }
 
+
+        if((resourceManagementScript.noiseLevel < 3) && resourceManagementScript.TRIGGERED)//after noise increase
+        {
+            resourceManagementScript.isNoiseDistracted = true;
+            resourceManagementScript.TRIGGERED = false;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "InteractTrigger")
         {
-            Interact_E_Icon.SetActive(true);
+            
             resourceManagementScript.CanInteract = true;
+            
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "InteractTrigger")
+        {
+            
+            
         }
     }
 
@@ -33,7 +59,7 @@ public class InteractTrigger : MonoBehaviour
     {
         if (other.tag == "InteractTrigger")
         {
-            Interact_E_Icon.SetActive(false);
+            
             resourceManagementScript.CanInteract = false;
         }
     }
