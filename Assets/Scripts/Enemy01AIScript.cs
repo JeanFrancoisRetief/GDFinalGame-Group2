@@ -238,6 +238,43 @@ public class Enemy01AIScript : MonoBehaviour
                 Great at hearing (greatest hearing radius) player’s movements
                 Moves constantly towards sounds (player or environment)
              */
+            float Range;
+            Range = Enemy03hearRange;
+            if (resourceManagementScript.noiseLevel == 0)
+            {
+                Enemy03Range = 0;
+            }
+            else if (resourceManagementScript.noiseLevel == 1)
+            {
+                Enemy03Range = Range/2.5f;
+            }
+            else if (resourceManagementScript.noiseLevel == 2)
+            {
+                Enemy03Range = Range/1.5f;
+            }
+            else if (resourceManagementScript.noiseLevel == 3)
+            {
+                Enemy03Range = Range;
+            }
+            else if (resourceManagementScript.noiseLevel == 4)
+            {
+                Enemy03Range = Range*1.34f;
+            }
+            else if (resourceManagementScript.noiseLevel == 5)
+            {
+                Enemy03Range = Range * 1.78f; 
+            }
+
+            if (Vector3.Distance(transform.position, target.position) < Enemy03Range)
+            {
+                transform.Translate(direction * slowdownMultiplier);
+                isChasing = true;
+            }
+            else
+            {
+                isChasing = false;
+                ChaseFrameCounter = 0;
+            }
         }
         if (enemyType == 4)
         {
