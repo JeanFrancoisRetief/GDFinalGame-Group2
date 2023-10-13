@@ -195,15 +195,29 @@ public class Enemy01AIScript : MonoBehaviour
                 Freezes when player looks at it
                 More active when player’s power / stamina is LOW (flashlight runs out - it will come for you)
              */
-            
+            float Range;
+            Range = viewRange*2;
+            if ((resourceManagementScript.staminaValue < 30) && (resourceManagementScript.powerLeft < 30))
+            {
+                Range = viewRange + staminaSenceRange + powerSenceRange;
+            }
+            else if(resourceManagementScript.staminaValue < 30)
+            {
+                Range = viewRange + staminaSenceRange;
+            }
+            else if (resourceManagementScript.powerLeft < 30)
+            {
+                Range = viewRange + powerSenceRange;
+            }
 
-            if(inView)
+            if (inView)
             {
                 Enemy02Range = 0;
             }
             else
             {
-                Enemy02Range = Enemy02viewRange*2; //test
+                //Enemy02Range = Enemy02viewRange*2; //test
+                Enemy02Range = Range;
             }
 
             if (Vector3.Distance(transform.position, target.position) < Enemy02Range)
@@ -224,6 +238,43 @@ public class Enemy01AIScript : MonoBehaviour
                 Great at hearing (greatest hearing radius) player’s movements
                 Moves constantly towards sounds (player or environment)
              */
+            float Range;
+            Range = hearRange;
+            if (resourceManagementScript.noiseLevel == 0)
+            {
+                Enemy03Range = 0;
+            }
+            else if (resourceManagementScript.noiseLevel == 1)
+            {
+                Enemy03Range = Range/2.5f;
+            }
+            else if (resourceManagementScript.noiseLevel == 2)
+            {
+                Enemy03Range = Range/1.5f;
+            }
+            else if (resourceManagementScript.noiseLevel == 3)
+            {
+                Enemy03Range = Range;
+            }
+            else if (resourceManagementScript.noiseLevel == 4)
+            {
+                Enemy03Range = Range*1.34f;
+            }
+            else if (resourceManagementScript.noiseLevel == 5)
+            {
+                Enemy03Range = Range * 1.78f; 
+            }
+
+            if (Vector3.Distance(transform.position, target.position) < Enemy03Range)
+            {
+                transform.Translate(direction * slowdownMultiplier);
+                isChasing = true;
+            }
+            else
+            {
+                isChasing = false;
+                ChaseFrameCounter = 0;
+            }
         }
         if (enemyType == 4)
         {
@@ -231,6 +282,54 @@ public class Enemy01AIScript : MonoBehaviour
                 More active the lower the player’s visibility is LOW (”sight” value), i.e., it will hunt you if you stick to the shadows
                 Basic hearing and sight
              */
+            float Range;
+            Range = viewRange;
+
+            if(resourceManagementScript.noiseLevel == 1)
+            {
+                Range = viewRange + hearRange/2.5f;
+            }
+            else if (resourceManagementScript.noiseLevel == 2)
+            {
+                Range = viewRange + hearRange / 2;
+            }
+            else if (resourceManagementScript.noiseLevel == 3)
+            {
+                Range = viewRange + hearRange / 1.5f;
+            }
+            else if (resourceManagementScript.noiseLevel == 4)
+            {
+                Range = viewRange + hearRange;
+            }
+            else if (resourceManagementScript.noiseLevel == 5)
+            {
+                Range = viewRange + hearRange *2;
+            }
+
+            if (resourceManagementScript.sightLevel == 2) //reverse of enemy 1
+            {
+                Enemy04Range = 0;
+            }
+            else if (resourceManagementScript.sightLevel == 1)
+            {
+                Enemy04Range = Range / 2.5f;
+            }
+            else if (resourceManagementScript.sightLevel == 0)
+            {
+                Enemy04Range = Range;
+            }
+            
+
+            if (Vector3.Distance(transform.position, target.position) < Enemy04Range)
+            {
+                transform.Translate(direction * slowdownMultiplier);
+                isChasing = true;
+            }
+            else
+            {
+                isChasing = false;
+                ChaseFrameCounter = 0;
+            }
         }
 
 
