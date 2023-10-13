@@ -196,7 +196,7 @@ public class Enemy01AIScript : MonoBehaviour
                 More active when player’s power / stamina is LOW (flashlight runs out - it will come for you)
              */
             float Range;
-            Range = viewRange;
+            Range = viewRange*2;
             if ((resourceManagementScript.staminaValue < 30) && (resourceManagementScript.powerLeft < 30))
             {
                 Range = viewRange + staminaSenceRange + powerSenceRange;
