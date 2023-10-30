@@ -8,6 +8,10 @@ TagManager:
   - LightTrigger
   - InteractTrigger
   - ChargeTrigger
+  - GROUND
+  - FIRST
+  - SECOND
+  - THIRD
   layers:
   - Default
   - TransparentFX

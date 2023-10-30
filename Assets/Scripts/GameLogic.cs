@@ -80,7 +80,7 @@ public class GameLogic : MonoBehaviour
         FFenemy003.SetActive(false);
 
         GFenemy001.SetActive(false);
-        GFenemy002.SetActive(false);
+        //GFenemy002.SetActive(false);
         GFenemy003.SetActive(false);
         GFenemy004.SetActive(false);
 
