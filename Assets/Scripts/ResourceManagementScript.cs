@@ -67,6 +67,7 @@ public class ResourceManagementScript : MonoBehaviour
     public bool inLight2;
 
     [Header("Power")]
+    public GameObject flashlight;
     public bool isFlashlightOn;
     public bool CanInteract;
     public bool isEnvActive;
@@ -138,6 +139,15 @@ public class ResourceManagementScript : MonoBehaviour
         Sight();
 
         DebugExtras();
+
+        if(isFlashlightOn)
+        {
+            flashlight.SetActive(true);
+        }
+        else
+        {
+            flashlight.SetActive(false);
+        }
     }
 
     public void DebugExtras()
