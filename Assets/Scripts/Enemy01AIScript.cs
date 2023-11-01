@@ -10,6 +10,7 @@ public class Enemy01AIScript : MonoBehaviour
 
     [Header("Scripts")]
     public ResourceManagementScript resourceManagementScript;
+    public UIScript uiScript;
 
     [Header("Movement")]
     public float slowdownMultiplier = 0.02f;
@@ -56,8 +57,13 @@ public class Enemy01AIScript : MonoBehaviour
     public int ChaseFrameCounter = 0;
     public float chasetime = 5;
 
+    public bool isAttacking;
+
     [Header("Bools")]
     public bool inView;
+
+    //[Header("States")]
+    //public int HealthState;
 
     //public Slider PlayerHealthSlider;
 
@@ -71,7 +77,9 @@ public class Enemy01AIScript : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         //slowdownMultiplier = 0.02f;
         isChasing = false;
+        isAttacking = false;
         ChaseFrameCounter = 0;
+        uiScript.HealthState = 0; //okay
 
         //starting ranges
         if (enemyType == 1)
@@ -355,9 +363,20 @@ public class Enemy01AIScript : MonoBehaviour
         if (Vector3.Distance(transform.position, target.position) < 1)
         {
             //Attack
-
+            isAttacking = true;
             //--------
             Destroy(gameObject);
+        }
+        else
+        {
+            isAttacking = false;
+        }
+
+        //Attacking player
+        if (isAttacking == true)
+        {
+            uiScript.HealthState++;
+            isAttacking = false;
         }
 
     }
