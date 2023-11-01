@@ -46,6 +46,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceManagementScript: {fileID: 0}
+  uiScript: {fileID: 0}
+  Enemy01Visuals: {fileID: 0}
+  Enemy02Visuals: {fileID: 0}
+  Enemy03Visuals: {fileID: 0}
+  Enemy04Visuals: {fileID: 0}
   slowdownMultiplier: 0.02
   enemyType: 1
   Enemy01Range: 0
@@ -71,6 +76,7 @@ MonoBehaviour:
   isChasing: 0
   ChaseFrameCounter: 0
   chasetime: 5
+  isAttacking: 0
   inView: 0
 --- !u!23 &6462940756571215650
 MeshRenderer:

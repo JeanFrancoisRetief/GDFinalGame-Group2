@@ -12,6 +12,13 @@ public class Enemy01AIScript : MonoBehaviour
     public ResourceManagementScript resourceManagementScript;
     public UIScript uiScript;
 
+    [Header("EnemyVisuals")]
+    public GameObject Enemy01Visuals;
+    public GameObject Enemy02Visuals;
+    public GameObject Enemy03Visuals;
+    public GameObject Enemy04Visuals;
+
+
     [Header("Movement")]
     public float slowdownMultiplier = 0.02f;
 
@@ -116,6 +123,36 @@ public class Enemy01AIScript : MonoBehaviour
         }
 
         inView = false;
+
+
+        if(enemyType == 1)///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        {
+            Enemy01Visuals.SetActive(true);
+            Enemy02Visuals.SetActive(false);
+            Enemy03Visuals.SetActive(false);
+            Enemy04Visuals.SetActive(false);
+        }
+        if(enemyType == 2)
+        {
+            Enemy01Visuals.SetActive(false);
+            Enemy02Visuals.SetActive(true);
+            Enemy03Visuals.SetActive(false);
+            Enemy04Visuals.SetActive(false);
+        }
+        if (enemyType == 3)
+        {
+            Enemy01Visuals.SetActive(false);
+            Enemy02Visuals.SetActive(false);
+            Enemy03Visuals.SetActive(true);
+            Enemy04Visuals.SetActive(false);
+        }
+        if (enemyType == 4)
+        {
+            Enemy01Visuals.SetActive(false);
+            Enemy02Visuals.SetActive(false);
+            Enemy03Visuals.SetActive(false);
+            Enemy04Visuals.SetActive(true);
+        }////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
 
     // Update is called once per frame
