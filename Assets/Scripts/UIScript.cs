@@ -20,6 +20,7 @@ public class UIScript : MonoBehaviour
     [Header("Blood")]
     public GameObject BloodEffect1;
     public GameObject BloodEffect2;
+    public GameObject BloodPnl;
 
     [Header("Other")]
     public bool isPowerOFF;
@@ -119,15 +120,17 @@ public class UIScript : MonoBehaviour
             //okay
             BloodEffect1.SetActive(false);
             BloodEffect2.SetActive(false);
+            BloodPnl.SetActive(false);
         }
 
 
         if(HealthState != 0)
         {
             HealthStateFrameCounter++;
+            BloodPnl.SetActive(true);
         }
 
-        if(HealthStateFrameCounter >= 60*10) //seconds
+        if(HealthStateFrameCounter >= 60*5) //seconds
         {
             HealthState--;
             HealthStateFrameCounter = 0;
