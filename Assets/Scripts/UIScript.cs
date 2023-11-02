@@ -27,6 +27,7 @@ public class UIScript : MonoBehaviour
     public int pwrOffFrameCounter;
     public int HealthState;
     public int HealthStateFrameCounter;
+    public GameObject pnlDeath;
 
     // Start is called before the first frame update
     void Start()
@@ -113,7 +114,7 @@ public class UIScript : MonoBehaviour
         else if (HealthState == 3)
         {
             //Death
-            Application.Quit();
+            pnlDeath.SetActive(true);
         }
         else if(HealthState == 0)
         {
@@ -136,5 +137,19 @@ public class UIScript : MonoBehaviour
             HealthStateFrameCounter = 0;
         }
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        //death
+        if (pnlDeath.active)
+        {
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+                SceneManager.LoadScene("MainMenu");
+            }
+
+            if (Input.GetKeyDown(KeyCode.G))
+            {
+                SceneManager.LoadScene("GameScene");
+            }
+        }
     }
 }
