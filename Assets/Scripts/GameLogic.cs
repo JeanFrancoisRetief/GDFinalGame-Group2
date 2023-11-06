@@ -138,28 +138,28 @@ public class GameLogic : MonoBehaviour
 
     public void ResetGroundPos()
     {
-        GFenemy001pos = new Vector3 (0, 0, 0);
-        GFenemy002pos = new Vector3(0, 0, 0);
-        GFenemy003pos = new Vector3(0, 0, 0);
-        GFenemy004pos = new Vector3(0, 0, 0);
+        GFenemy001pos = new Vector3 (-37.95549f, 0, 6);
+        GFenemy002pos = new Vector3(-30, 0, 25);
+        GFenemy003pos = new Vector3(-30, 0, 20);
+        GFenemy004pos = new Vector3(-41, 0, 37);
     }
 
     public void ResetFirstPos()
     {
-        FFenemy001pos = new Vector3(0, 0, 0);
-        FFenemy002pos = new Vector3(0, 0, 0);
-        FFenemy003pos = new Vector3(0, 0, 0);
+        FFenemy001pos = new Vector3(-23, 4.24f, 40);
+        FFenemy002pos = new Vector3(-41, 4.24f, 15);
+        FFenemy003pos = new Vector3(-46, 4.24f, 27);
     }
 
     public void ResetSecondPos()
     {
-        SFenemy001pos = new Vector3(0, 0, 0);
-        SFenemy002pos = new Vector3(0, 0, 0);
+        SFenemy001pos = new Vector3(-25, 8.15f, 42);
+        SFenemy002pos = new Vector3(-40, 8.15f, 6);
     }
 
     public void ResetThirdPos()
     {
-        TFenemy001pos = new Vector3(0, 0, 0);
+        TFenemy001pos = new Vector3(-40, 12.335f, 6);
     }
 
     private void OnTriggerEnter(Collider other)
