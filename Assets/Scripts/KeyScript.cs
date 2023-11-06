@@ -73,7 +73,7 @@ public class KeyScript : MonoBehaviour
             }
         }
 
-        if (other.CompareTag("KeyThree"))
+        /*if (other.CompareTag("KeyThree"))
         {
             hintText.text = "Press Q to pick up key";
             if (Input.GetKeyDown("Q"))
@@ -82,7 +82,7 @@ public class KeyScript : MonoBehaviour
                 hasKeyThree = true;
                 KeyThree.SetActive(false);
             }
-        }
+        }*/
 
         if (other.CompareTag("KeyFour"))
         {

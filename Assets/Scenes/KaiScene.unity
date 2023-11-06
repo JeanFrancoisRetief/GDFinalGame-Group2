@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 8900000, guid: 619e305f5165a9946b7f72464e44ca4a, type: 3}
   m_Sun: {fileID: 2114283754330233425}
-  m_IndirectSpecularColor: {r: 0.029152213, g: 0.064445764, b: 0.12695098, a: 1}
+  m_IndirectSpecularColor: {r: 0.029152056, g: 0.06444542, b: 0.12695055, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -19994,6 +19994,55 @@ MonoBehaviour:
   GFenemy002pos: {x: 0, y: 0, z: 0}
   GFenemy003pos: {x: 0, y: 0, z: 0}
   GFenemy004pos: {x: 0, y: 0, z: 0}
+--- !u!114 &900648090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900648088}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026bf769e419092488ac25f08a458cd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KeyOne: {fileID: 0}
+  KeyTwo: {fileID: 0}
+  KeyThree: {fileID: 0}
+  KeyFour: {fileID: 0}
+  DoorOne: {fileID: 0}
+  DoorTwo: {fileID: 0}
+  DoorThree: {fileID: 0}
+  DoorFour: {fileID: 0}
+  warningText: {fileID: 0}
+  hintText: {fileID: 0}
+  textFrameCounter: 0
+  hasKeyOne: 0
+  hasKeyTwo: 0
+  hasKeyThree: 0
+  hasKeyFour: 0
+--- !u!114 &900648091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900648088}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 369106eeeb0dc7a4297d9c34a9b34204, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectInteractPanel: {fileID: 0}
+  UIObject1: {fileID: 0}
+  UIObject2: {fileID: 0}
+  UIObject3: {fileID: 0}
+  UIObject4: {fileID: 0}
+  UIObject5: {fileID: 0}
+  UIObject1Broken: {fileID: 0}
+  InteractTextHint: {fileID: 0}
+  keyScript: {fileID: 900648090}
+  isViewingKeyObject: 0
 --- !u!114 &900648094 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5128078261729981829, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
