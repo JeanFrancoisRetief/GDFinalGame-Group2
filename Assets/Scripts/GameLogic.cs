@@ -142,6 +142,11 @@ public class GameLogic : MonoBehaviour
         GFenemy002pos = new Vector3(-30, 0, 25);
         GFenemy003pos = new Vector3(-30, 0, 20);
         GFenemy004pos = new Vector3(-41, 0, 37);
+
+        GFenemy001.transform.position = GFenemy001pos;
+        GFenemy002.transform.position = GFenemy002pos;
+        GFenemy003.transform.position = GFenemy003pos;
+        GFenemy004.transform.position = GFenemy004pos;
     }
 
     public void ResetFirstPos()
@@ -149,17 +154,26 @@ public class GameLogic : MonoBehaviour
         FFenemy001pos = new Vector3(-23, 4.24f, 40);
         FFenemy002pos = new Vector3(-41, 4.24f, 15);
         FFenemy003pos = new Vector3(-46, 4.24f, 27);
+
+        FFenemy001.transform.position = FFenemy001pos;
+        FFenemy002.transform.position = FFenemy002pos;
+        FFenemy003.transform.position = FFenemy003pos;
     }
 
     public void ResetSecondPos()
     {
         SFenemy001pos = new Vector3(-25, 8.15f, 42);
         SFenemy002pos = new Vector3(-40, 8.15f, 6);
+
+        SFenemy001.transform.position = SFenemy001pos;
+        SFenemy002.transform.position = SFenemy002pos;
     }
 
     public void ResetThirdPos()
     {
         TFenemy001pos = new Vector3(-40, 12.335f, 6);
+
+        TFenemy001.transform.position = TFenemy001pos;
     }
 
     private void OnTriggerEnter(Collider other)
