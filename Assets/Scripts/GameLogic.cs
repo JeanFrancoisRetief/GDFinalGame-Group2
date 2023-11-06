@@ -168,6 +168,7 @@ public class GameLogic : MonoBehaviour
         {
             //SecondToThird.SetActive(false);
             //currentFloor = Floor.GROUND;
+            Debug.Log("Trigger");
             ResetFirstPos();
 
 
@@ -190,7 +191,7 @@ public class GameLogic : MonoBehaviour
         {
             ResetGroundPos();
             ResetSecondPos();
-
+            Debug.Log("Trigger");
 
             TFenemy001.SetActive(false);
 
@@ -210,7 +211,7 @@ public class GameLogic : MonoBehaviour
         {
             ResetFirstPos();
             ResetThirdPos();
-
+            Debug.Log("Trigger");
             TFenemy001.SetActive(false);
 
             SFenemy001.SetActive(true);
@@ -228,7 +229,7 @@ public class GameLogic : MonoBehaviour
         if (other.tag == "THIRD")
         {
             ResetSecondPos();
-
+            Debug.Log("Trigger");
             TFenemy001.SetActive(true);
 
             SFenemy001.SetActive(false);
