@@ -17,6 +17,7 @@ TagManager:
   - ObjectTrigger3
   - ObjectTrigger4
   - ObjectTrigger5
+  - Elevator
   layers:
   - Default
   - TransparentFX
