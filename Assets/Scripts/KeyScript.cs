@@ -16,11 +16,14 @@ public class KeyScript : MonoBehaviour
     public GameObject DoorThree;
     public GameObject DoorFour;
 
+    public GameObject Keypad;
+    public bool inKeyPad;
+
     public Text warningText;
     public Text hintText;
     public int textFrameCounter;
 
-    
+
     public bool hasKeyOne = false;
     public bool hasKeyTwo = false;
     public bool hasKeyThree = false;
@@ -29,19 +32,22 @@ public class KeyScript : MonoBehaviour
     void Start()
     {
         textFrameCounter = 0;
-        
-        
+
+        inKeyPad = false;
+
+        Keypad.SetActive(false);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(warningText.text != "")
+        if (warningText.text != "")
         {
             textFrameCounter++;
         }
 
-        if(textFrameCounter >= 60 * 3)
+        if (textFrameCounter >= 60 * 3)
         {
             warningText.text = "";
             textFrameCounter = 0;
@@ -50,10 +56,10 @@ public class KeyScript : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.CompareTag("KeyOne"))
+        if (other.CompareTag("KeyOne"))
         {
             hintText.text = "Press Q to pick up key";
-            
+
             if (Input.GetKeyDown("Q"))
             {
                 hintText.text = "";
@@ -73,7 +79,7 @@ public class KeyScript : MonoBehaviour
             }
         }
 
-        if (other.CompareTag("KeyThree"))
+        /*if (other.CompareTag("KeyThree"))
         {
             hintText.text = "Press Q to pick up key";
             if (Input.GetKeyDown("Q"))
@@ -82,7 +88,7 @@ public class KeyScript : MonoBehaviour
                 hasKeyThree = true;
                 KeyThree.SetActive(false);
             }
-        }
+        }*/
 
         if (other.CompareTag("KeyFour"))
         {
@@ -168,8 +174,45 @@ public class KeyScript : MonoBehaviour
         }
 
 
+        if (other.CompareTag("Elevator"))
+        {
+
+            if (Input.GetKeyDown("Q"))
+            {
+                if (!inKeyPad)
+                {
+                    hintText.text = "Press Q to exit keypad";
+                    Keypad.SetActive(true);
+                    inKeyPad = true;
+                }
+                else
+                {
+                    hintText.text = "Press Q to use keypad";
+                    Keypad.SetActive(false);
+                    inKeyPad = false;
+                }
+
+            }
+
+        }
 
 
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Elevator"))
+        {
+            hintText.text = "Press Q to use keypad";
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Elevator"))
+        {
+            hintText.text = "";
+        }
     }
 }
