@@ -12,6 +12,12 @@ TagManager:
   - FIRST
   - SECOND
   - THIRD
+  - ObjectTrigger1
+  - ObjectTrigger2
+  - ObjectTrigger3
+  - ObjectTrigger4
+  - ObjectTrigger5
+  - Elevator
   layers:
   - Default
   - TransparentFX
