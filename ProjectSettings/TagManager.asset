@@ -18,6 +18,14 @@ TagManager:
   - ObjectTrigger4
   - ObjectTrigger5
   - Elevator
+  - KeyOne
+  - KeyTwo
+  - KeyThree
+  - KeyFour
+  - DoorOne
+  - DoorTwo
+  - DoorThree
+  - DoorFour
   layers:
   - Default
   - TransparentFX

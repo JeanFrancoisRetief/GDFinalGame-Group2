@@ -42,7 +42,11 @@ public class ObjectTrigger : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        InteractTextHint.text = "Press Q to interact.";
+        if (other.tag == "ObjectTrigger1" || other.tag == "ObjectTrigger2" || other.tag == "ObjectTrigger3" || other.tag == "ObjectTrigger4" || other.tag == "ObjectTrigger5")
+        {
+            InteractTextHint.text = "Press Q to interact.";
+        }
+           
     }
 
     private void OnTriggerStay(Collider other)
@@ -111,7 +115,7 @@ public class ObjectTrigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "ObjectTrigger1")
+        if (other.tag == "ObjectTrigger1" || other.tag == "ObjectTrigger2" || other.tag == "ObjectTrigger3" || other.tag == "ObjectTrigger4" || other.tag == "ObjectTrigger5")
         {
             InteractTextHint.text = "";
             
