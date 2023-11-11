@@ -71,6 +71,7 @@ public class ObjectTrigger : MonoBehaviour
                 //break effect
                 UIObject1Broken.SetActive(true);
                 UIObject1.SetActive(false);
+                other.enabled = false;
             }
 
         }

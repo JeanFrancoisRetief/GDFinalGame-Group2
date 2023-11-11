@@ -329,5 +329,6 @@ public class KeyScript : MonoBehaviour
             hintText.text = "";
         }
         warningText.text = "";
+        hintText.text = "";
     }
 }

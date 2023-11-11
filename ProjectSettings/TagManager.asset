@@ -33,7 +33,6 @@ TagManager:
   - Text5
   - Text6
   - Text7
-  - Text8
   layers:
   - Default
   - TransparentFX
