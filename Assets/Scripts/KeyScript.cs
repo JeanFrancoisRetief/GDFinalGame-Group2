@@ -66,7 +66,7 @@ public class KeyScript : MonoBehaviour
         {
             //hintText.text = "Press Q to pick up key";
 
-            if (Input.GetKeyDown("Q"))
+            if (Input.GetKeyDown(KeyCode.Q))
             {
                 hintText.text = "";
                 hasKeyOne = true;
@@ -77,7 +77,7 @@ public class KeyScript : MonoBehaviour
         if (other.CompareTag("KeyTwo"))
         {
             //hintText.text = "Press Q to pick up key";
-            if (Input.GetKeyDown("Q"))
+            if (Input.GetKeyDown(KeyCode.Q))
             {
                 hintText.text = "";
                 hasKeyTwo = true;
@@ -99,7 +99,7 @@ public class KeyScript : MonoBehaviour
         if (other.CompareTag("KeyFour"))
         {
             //hintText.text = "Press Q to pick up key";
-            if (Input.GetKeyDown("Q"))
+            if (Input.GetKeyDown(KeyCode.Q))
             {
                 hintText.text = "";
                 hasKeyFour = true;
@@ -113,7 +113,7 @@ public class KeyScript : MonoBehaviour
             if (hasKeyOne)
             {
                 //hintText.text = "Press Q to open door";
-                if (Input.GetKeyDown("Q"))
+                if (Input.GetKeyDown(KeyCode.Q))
                 {
                     hintText.text = "";
                     DoorOne.SetActive(false);
@@ -131,7 +131,7 @@ public class KeyScript : MonoBehaviour
             if (hasKeyTwo)
             {
                 //hintText.text = "Press Q to open door";
-                if (Input.GetKeyDown("Q"))
+                if (Input.GetKeyDown(KeyCode.Q))
                 {
                     hintText.text = "";
                     DoorTwo.SetActive(false);
@@ -149,7 +149,7 @@ public class KeyScript : MonoBehaviour
             if (hasKeyThree)
             {
                 //hintText.text = "Press Q to open door";
-                if (Input.GetKeyDown("Q"))
+                if (Input.GetKeyDown(KeyCode.Q))
                 {
                     hintText.text = "";
                     DoorThree.SetActive(false);
@@ -167,7 +167,7 @@ public class KeyScript : MonoBehaviour
             if (hasKeyFour)
             {
                 //hintText.text = "Press Q to open door";
-                if (Input.GetKeyDown("Q"))
+                if (Input.GetKeyDown(KeyCode.Q))
                 {
                     hintText.text = "";
                     DoorFour.SetActive(false);
@@ -183,7 +183,7 @@ public class KeyScript : MonoBehaviour
         if (other.CompareTag("Elevator"))
         {
 
-            if (Input.GetKeyDown("Q"))
+            if (Input.GetKeyDown(KeyCode.Q))
             {
                 if (!inKeyPad)
                 {
@@ -302,7 +302,7 @@ public class KeyScript : MonoBehaviour
         if (other.CompareTag("Elevator"))
         {
 
-            if (Input.GetKeyDown("Q"))
+            if (Input.GetKeyDown(KeyCode.Q))
             {
                 if (!inKeyPad)
                 {

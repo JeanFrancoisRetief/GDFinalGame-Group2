@@ -11,7 +11,7 @@ public class TextingScript : MonoBehaviour
     public GameObject Panel5;
     public GameObject Panel6;
     public GameObject Panel7;
-    public GameObject Panel8;
+    //public GameObject Panel8;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +22,7 @@ public class TextingScript : MonoBehaviour
         Panel5.SetActive(false);
         Panel6.SetActive(false);
         Panel7.SetActive(false);
-        Panel8.SetActive(false);
+       // Panel8.SetActive(false);
     }
 
     // Update is called once per frame
@@ -42,7 +42,7 @@ public class TextingScript : MonoBehaviour
             Panel5.SetActive(false);
             Panel6.SetActive(false);
             Panel7.SetActive(false);
-            Panel8.SetActive(false);
+           // Panel8.SetActive(false);
         }
         if (other.tag == "Text2")//third floor closer to key
         {
@@ -53,7 +53,7 @@ public class TextingScript : MonoBehaviour
             Panel5.SetActive(false);
             Panel6.SetActive(false);
             Panel7.SetActive(false);
-            Panel8.SetActive(false);
+           // Panel8.SetActive(false);
         }
         if (other.tag == "Text3")//second floor near forced light 
         {
@@ -64,7 +64,7 @@ public class TextingScript : MonoBehaviour
             Panel5.SetActive(false);
             Panel6.SetActive(false);
             Panel7.SetActive(false);
-            Panel8.SetActive(false);
+            //Panel8.SetActive(false);
         }
         if (other.tag == "Text4")//first floor (in staircase)
         {
@@ -75,7 +75,7 @@ public class TextingScript : MonoBehaviour
             Panel5.SetActive(false);
             Panel6.SetActive(false);
             Panel7.SetActive(false);
-            Panel8.SetActive(false);
+            //Panel8.SetActive(false);
         }
         if (other.tag == "Text5")//ground floor as you leave the stairs
         {
@@ -86,7 +86,7 @@ public class TextingScript : MonoBehaviour
             Panel5.SetActive(true);
             Panel6.SetActive(false);
             Panel7.SetActive(false);
-            Panel8.SetActive(false);
+            //Panel8.SetActive(false);
         }
         if (other.tag == "Text6")//RIDDLE (ground floor)
         {
@@ -97,7 +97,7 @@ public class TextingScript : MonoBehaviour
             Panel5.SetActive(false);
             Panel6.SetActive(true);
             Panel7.SetActive(false);
-            Panel8.SetActive(false);
+            //Panel8.SetActive(false);
         }
         if (other.tag == "Text7")
         {
@@ -108,7 +108,7 @@ public class TextingScript : MonoBehaviour
             Panel5.SetActive(false);
             Panel6.SetActive(false);
             Panel7.SetActive(true);
-            Panel8.SetActive(false);
+            //Panel8.SetActive(false);
         }
         if (other.tag == "Text8")
         {
@@ -119,7 +119,7 @@ public class TextingScript : MonoBehaviour
             Panel5.SetActive(false);
             Panel6.SetActive(false);
             Panel7.SetActive(false);
-            Panel8.SetActive(true);
+            //Panel8.SetActive(true);
         }
 
         other.enabled = false;
