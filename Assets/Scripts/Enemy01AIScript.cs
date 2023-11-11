@@ -393,7 +393,8 @@ public class Enemy01AIScript : MonoBehaviour
         {
             isChasing = false;
             ChaseFrameCounter = 0;
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            gameObject.transform.position = new Vector3(0, 100000000, 0);
         }
 
         //Attack AI
@@ -402,7 +403,8 @@ public class Enemy01AIScript : MonoBehaviour
             //Attack
             isAttacking = true;
             //--------
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            gameObject.transform.position = new Vector3(0, 100000000, 0);
         }
         else
         {

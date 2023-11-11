@@ -12,7 +12,8 @@ public class GameLogic : MonoBehaviour
         GROUND,
         FIRST,
         SECOND,
-        THIRD
+        THIRD,
+        STAIRS
     }
 
     /*[Header("Triggers")]
@@ -68,9 +69,9 @@ public class GameLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentFloor = Floor.THIRD;
+        //currentFloor = Floor.THIRD;
 
-        TFenemy001.SetActive(true);
+        TFenemy001.SetActive(false);
 
         SFenemy001.SetActive(false);
         SFenemy002.SetActive(false);
@@ -80,7 +81,7 @@ public class GameLogic : MonoBehaviour
         FFenemy003.SetActive(false);
 
         GFenemy001.SetActive(false);
-        //GFenemy002.SetActive(false);
+        GFenemy002.SetActive(false);
         GFenemy003.SetActive(false);
         GFenemy004.SetActive(false);
 
@@ -91,51 +92,126 @@ public class GameLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerPositionY > 0 && playerPositionY <= 5)
+        playerPositionY = gameObject.transform.position.y;
+        if (playerPositionY > 0.1f && playerPositionY <= 0.3f)
         {
             //Ground floor
             currentFloor = Floor.GROUND;
         }
-        else if (playerPositionY > 5 && playerPositionY <= 9)
+        else if (playerPositionY > 4.3f && playerPositionY <= 4.5f)
         {
             //First FLoor
             currentFloor = Floor.FIRST;
         }
-        else if (playerPositionY > 9 && playerPositionY <= 13)
+        else if (playerPositionY > 8.3f && playerPositionY <= 8.5f)
         {
             //second FLoor
             currentFloor = Floor.SECOND;
         }
-        else if (playerPositionY > 13 && playerPositionY <= 17)
+        else if (playerPositionY > 12.3f && playerPositionY <= 12.5f)
         {
             //third FLoor
             currentFloor = Floor.THIRD;
         }
+        else
+        {
+            currentFloor = Floor.STAIRS;
+        }
         //can add second "level" to final room
 
 
-        /*
+        
         if(currentFloor == Floor.GROUND)
         {
             //enable groundfloor enemies and disable other enemies (to be safe)
+            TFenemy001.SetActive(false);
 
-            
+            SFenemy001.SetActive(false);
+            SFenemy002.SetActive(false);
+
+            FFenemy001.SetActive(false);
+            FFenemy002.SetActive(false);
+            FFenemy003.SetActive(false);
+
+            GFenemy001.SetActive(true);
+            GFenemy002.SetActive(true);
+            GFenemy003.SetActive(true);
+            GFenemy004.SetActive(true);
+
 
         }
         if (currentFloor == Floor.FIRST)
         {
-            
+            TFenemy001.SetActive(false);
+
+            SFenemy001.SetActive(false);
+            SFenemy002.SetActive(false);
+
+            FFenemy001.SetActive(true);
+            FFenemy002.SetActive(true);
+            FFenemy003.SetActive(true);
+
+            GFenemy001.SetActive(false);
+            GFenemy002.SetActive(false);
+            GFenemy003.SetActive(false);
+            GFenemy004.SetActive(false);
         }
         if (currentFloor == Floor.SECOND)
         {
-            
+            TFenemy001.SetActive(false);
+
+            SFenemy001.SetActive(true);
+            SFenemy002.SetActive(true);
+
+            FFenemy001.SetActive(false);
+            FFenemy002.SetActive(false);
+            FFenemy003.SetActive(false);
+
+            GFenemy001.SetActive(false);
+            GFenemy002.SetActive(false);
+            GFenemy003.SetActive(false);
+            GFenemy004.SetActive(false);
         }
         if (currentFloor == Floor.THIRD)
         {
-            
-        }*/
-    }
+            TFenemy001.SetActive(true);
 
+            SFenemy001.SetActive(false);
+            SFenemy002.SetActive(false);
+
+            FFenemy001.SetActive(false);
+            FFenemy002.SetActive(false);
+            FFenemy003.SetActive(false);
+
+            GFenemy001.SetActive(false);
+            GFenemy002.SetActive(false);
+            GFenemy003.SetActive(false);
+            GFenemy004.SetActive(false);
+        }
+        if (currentFloor == Floor.STAIRS)
+        {
+            TFenemy001.SetActive(false);
+
+            SFenemy001.SetActive(false);
+            SFenemy002.SetActive(false);
+
+            FFenemy001.SetActive(false);
+            FFenemy002.SetActive(false);
+            FFenemy003.SetActive(false);
+
+            GFenemy001.SetActive(false);
+            GFenemy002.SetActive(false);
+            GFenemy003.SetActive(false);
+            GFenemy004.SetActive(false);
+
+            ResetGroundPos();
+            ResetFirstPos();
+            ResetSecondPos();
+            ResetThirdPos();
+
+        }
+    }
+    
     public void ResetGroundPos()
     {
         GFenemy001pos = new Vector3 (-37.95549f, 0, 6);
@@ -175,7 +251,7 @@ public class GameLogic : MonoBehaviour
 
         TFenemy001.transform.position = TFenemy001pos;
     }
-
+    /*
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "GROUND")
@@ -259,5 +335,5 @@ public class GameLogic : MonoBehaviour
             GFenemy004.SetActive(false);
         }
 
-    }
+    }*/
 }
