@@ -91,7 +91,7 @@ public class ResourceManagementScript : MonoBehaviour
         staminaValue = 100;
 
         staminaFrameCounter = 0;
-
+        TRIGGERED = false;
 
         noiseLevel = 0;
         sightLevel = 0;

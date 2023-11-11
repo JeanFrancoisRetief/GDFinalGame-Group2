@@ -22,7 +22,7 @@ public class KeyScript : MonoBehaviour
     public Text warningText;
     public Text hintText;
     public int textFrameCounter;
-
+    public ResourceManagementScript resourceScript;
 
     public bool hasKeyOne = false;
     public bool hasKeyTwo = false;
@@ -52,15 +52,21 @@ public class KeyScript : MonoBehaviour
             warningText.text = "";
             textFrameCounter = 0;
         }
+
+        if(resourceScript.TRIGGERED == true)
+        {
+            hasKeyFour = true;
+            KeyFour.SetActive(false);
+        }
     }
 
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("KeyOne"))
         {
-            hintText.text = "Press Q to pick up key";
+            //hintText.text = "Press Q to pick up key";
 
-            if (Input.GetKeyDown("Q"))
+            if (Input.GetKeyDown(KeyCode.Q))
             {
                 hintText.text = "";
                 hasKeyOne = true;
@@ -70,8 +76,8 @@ public class KeyScript : MonoBehaviour
 
         if (other.CompareTag("KeyTwo"))
         {
-            hintText.text = "Press Q to pick up key";
-            if (Input.GetKeyDown("Q"))
+            //hintText.text = "Press Q to pick up key";
+            if (Input.GetKeyDown(KeyCode.Q))
             {
                 hintText.text = "";
                 hasKeyTwo = true;
@@ -92,8 +98,8 @@ public class KeyScript : MonoBehaviour
 
         if (other.CompareTag("KeyFour"))
         {
-            hintText.text = "Press Q to pick up key";
-            if (Input.GetKeyDown("Q"))
+            //hintText.text = "Press Q to pick up key";
+            if (Input.GetKeyDown(KeyCode.Q))
             {
                 hintText.text = "";
                 hasKeyFour = true;
@@ -106,8 +112,8 @@ public class KeyScript : MonoBehaviour
 
             if (hasKeyOne)
             {
-                hintText.text = "Press Q to open door";
-                if (Input.GetKeyDown("Q"))
+                //hintText.text = "Press Q to open door";
+                if (Input.GetKeyDown(KeyCode.Q))
                 {
                     hintText.text = "";
                     DoorOne.SetActive(false);
@@ -124,8 +130,8 @@ public class KeyScript : MonoBehaviour
 
             if (hasKeyTwo)
             {
-                hintText.text = "Press Q to open door";
-                if (Input.GetKeyDown("Q"))
+                //hintText.text = "Press Q to open door";
+                if (Input.GetKeyDown(KeyCode.Q))
                 {
                     hintText.text = "";
                     DoorTwo.SetActive(false);
@@ -142,8 +148,8 @@ public class KeyScript : MonoBehaviour
 
             if (hasKeyThree)
             {
-                hintText.text = "Press Q to open door";
-                if (Input.GetKeyDown("Q"))
+                //hintText.text = "Press Q to open door";
+                if (Input.GetKeyDown(KeyCode.Q))
                 {
                     hintText.text = "";
                     DoorThree.SetActive(false);
@@ -160,8 +166,8 @@ public class KeyScript : MonoBehaviour
 
             if (hasKeyFour)
             {
-                hintText.text = "Press Q to open door";
-                if (Input.GetKeyDown("Q"))
+                //hintText.text = "Press Q to open door";
+                if (Input.GetKeyDown(KeyCode.Q))
                 {
                     hintText.text = "";
                     DoorFour.SetActive(false);
@@ -177,17 +183,17 @@ public class KeyScript : MonoBehaviour
         if (other.CompareTag("Elevator"))
         {
 
-            if (Input.GetKeyDown("Q"))
+            if (Input.GetKeyDown(KeyCode.Q))
             {
                 if (!inKeyPad)
                 {
-                    hintText.text = "Press Q to exit keypad";
+                    //hintText.text = "Press Q to exit keypad";
                     Keypad.SetActive(true);
                     inKeyPad = true;
                 }
                 else
                 {
-                    hintText.text = "Press Q to use keypad";
+                    //hintText.text = "Press Q to use keypad";
                     Keypad.SetActive(false);
                     inKeyPad = false;
                 }
@@ -206,6 +212,114 @@ public class KeyScript : MonoBehaviour
         {
             hintText.text = "Press Q to use keypad";
         }
+
+        if (other.CompareTag("KeyOne"))
+        {
+            hintText.text = "Press Q to pick up key";
+
+        }
+
+        if (other.CompareTag("KeyTwo"))
+        {
+            hintText.text = "Press Q to pick up key";
+           
+        }
+
+        /*if (other.CompareTag("KeyThree"))
+        {
+            hintText.text = "Press Q to pick up key";
+            if (Input.GetKeyDown("Q"))
+            {
+                hintText.text = "";
+                hasKeyThree = true;
+                KeyThree.SetActive(false);
+            }
+        }*/
+
+        if (other.CompareTag("KeyFour"))
+        {
+            hintText.text = "Press Q to pick up key";
+           
+        }
+
+        if (other.CompareTag("DoorOne"))
+        {
+
+            if (hasKeyOne)
+            {
+                hintText.text = "Press Q to open door";
+                
+            }
+            else
+            {
+                warningText.text = "Get The Key Stupid!";
+            }
+        }
+
+        if (other.CompareTag("DoorTwo"))
+        {
+
+            if (hasKeyTwo)
+            {
+                hintText.text = "Press Q to open door";
+                
+            }
+            else
+            {
+                warningText.text = "Get The Key Stupid!";
+            }
+        }
+
+        if (other.CompareTag("DoorThree"))
+        {
+
+            if (hasKeyThree)
+            {
+                hintText.text = "Press Q to open door";
+               
+            }
+            else
+            {
+                warningText.text = "Get The Key Stupid!";
+            }
+        }
+
+        if (other.CompareTag("DoorFour"))
+        {
+
+            if (hasKeyFour)
+            {
+                hintText.text = "Press Q to open door";
+               
+            }
+            else
+            {
+                warningText.text = "Get The Key Stupid!";
+            }
+        }
+
+
+        if (other.CompareTag("Elevator"))
+        {
+
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                if (!inKeyPad)
+                {
+                    hintText.text = "Press Q to exit keypad";
+                    //Keypad.SetActive(true);
+                    //inKeyPad = true;
+                }
+                else
+                {
+                    hintText.text = "Press Q to use keypad";
+                    //Keypad.SetActive(false);
+                   // inKeyPad = false;
+                }
+
+            }
+
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -214,5 +328,7 @@ public class KeyScript : MonoBehaviour
         {
             hintText.text = "";
         }
+        warningText.text = "";
+        hintText.text = "";
     }
 }

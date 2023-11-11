@@ -28,6 +28,7 @@ public class LightTrigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        Debug.Log("Exit");
         if (other.tag == "LightTrigger")
         {
             resourceManagementScript.inLight1 = false;
