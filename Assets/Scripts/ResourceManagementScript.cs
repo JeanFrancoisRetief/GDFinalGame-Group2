@@ -12,6 +12,9 @@ public class ResourceManagementScript : MonoBehaviour
     [Header("Frame counters")]
     public int staminaFrameCounter;
 
+    [Header("Scripts")]
+    public SoundScript soundScript;
+
     [Header("UI")]
     public Slider StaminaSlider;
     public Text NoiseMeterText; //can be replaced by images
@@ -33,6 +36,9 @@ public class ResourceManagementScript : MonoBehaviour
     [Header("Stamina")]
     public bool isWalking;
     public bool isSprinting;
+    public bool hasPlayed;
+    private bool isWalkingCheck;
+    private bool isRunningCheck;
 
     [Space(10)]
     public float staminaValue;
@@ -89,6 +95,9 @@ public class ResourceManagementScript : MonoBehaviour
         isSprinting = false;
         isFlashlightOn = false;
         staminaValue = 100;
+        hasPlayed = false;
+        isWalkingCheck = false;
+        isRunningCheck = false;
 
         staminaFrameCounter = 0;
         TRIGGERED = false;
@@ -213,11 +222,13 @@ public class ResourceManagementScript : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.F) && !isFlashlightOn)
         {
             isFlashlightOn = true;
+            soundScript.flashlight.Play();
             FlashLightOn();
         } 
         else if (Input.GetKeyDown(KeyCode.F) && isFlashlightOn)
         {
             isFlashlightOn = false;
+            soundScript.flashlight.Play();
             FlashLightOff();
         }
 
@@ -455,7 +466,6 @@ public class ResourceManagementScript : MonoBehaviour
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
             isWalking = true;
-            
         }
         else
         {
@@ -506,9 +516,80 @@ public class ResourceManagementScript : MonoBehaviour
         if(staminaValue <= 0)
         {
             staminaValue = 0;
+            if(!hasPlayed)
+            {
+                soundScript.lowStamina.Play();
+                hasPlayed = true;
+            }
             PlayerPrefab.transform.position = StopPosition;
         }
 
+        if (isWalking)
+        {
+            if (!isWalkingCheck)
+            {
+                soundScript.walking.Play();
+                isWalkingCheck = true;
+            }
+
+        }
+        
+        if (isSprinting)
+        {
+            if (!isRunningCheck)
+            {
+                soundScript.running.Play();
+                isRunningCheck = true;
+            }
+        }    
+
+        if (hasPlayed)
+        {
+            StartCoroutine(staminaSound());
+        }
+
+        if (isWalkingCheck)
+        {
+            StartCoroutine(walkingSound());
+        }
+
+        if (!isWalking)
+        {
+            soundScript.walking.Stop();
+            isWalkingCheck = false;
+        }
+
+        if (isRunningCheck)
+        {
+            StartCoroutine(runningSound());
+        }
+
+        if (!isSprinting)
+        {
+            soundScript.running.Stop();
+            isRunningCheck = false;
+        }
+    }
+
+    public IEnumerator staminaSound()
+    {
+        yield return new WaitForSeconds(12f);
+
+        hasPlayed = false;
+    }
+
+    public IEnumerator walkingSound()
+    {
+        yield return new WaitForSeconds(18f);
+
+        isWalkingCheck = false;
+    }
+
+    public IEnumerator runningSound()
+    {
+        yield return new WaitForSeconds(3f);
+
+        isRunningCheck = false;
     }
 
     /*

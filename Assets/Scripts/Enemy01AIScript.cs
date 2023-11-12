@@ -11,6 +11,7 @@ public class Enemy01AIScript : MonoBehaviour
     [Header("Scripts")]
     public ResourceManagementScript resourceManagementScript;
     public UIScript uiScript;
+    public SoundScript soundScript;
 
     [Header("EnemyVisuals")]
     public GameObject Enemy01Visuals;
@@ -68,6 +69,10 @@ public class Enemy01AIScript : MonoBehaviour
 
     [Header("Bools")]
     public bool inView;
+    private bool vukAttacking;
+    private bool kieranAttacking;
+    private bool timAttacking;
+    private bool blamboAttacking;
 
     //[Header("States")]
     //public int HealthState;
@@ -233,6 +238,11 @@ public class Enemy01AIScript : MonoBehaviour
                 ChaseFrameCounter = 0;
             }
 
+            if (Vector3.Distance(transform.position, target.position) < 10)
+            {
+                soundScript.enemyVuk.Play();
+                vukAttacking = true;
+            }
         }
         if (enemyType == 2)
         {
@@ -274,6 +284,12 @@ public class Enemy01AIScript : MonoBehaviour
             {
                 isChasing = false;
                 ChaseFrameCounter = 0;
+            }
+
+            if (Vector3.Distance(transform.position, target.position) < 10)
+            {
+                soundScript.enemyKieran.Play();
+                kieranAttacking = true;
             }
         }
         if (enemyType == 3)
@@ -319,6 +335,12 @@ public class Enemy01AIScript : MonoBehaviour
             {
                 isChasing = false;
                 ChaseFrameCounter = 0;
+            }
+
+            if (Vector3.Distance(transform.position, target.position) < 10)
+            {
+                soundScript.enemyTim.Play();
+                timAttacking = true;
             }
         }
         if (enemyType == 4)
@@ -375,6 +397,12 @@ public class Enemy01AIScript : MonoBehaviour
                 isChasing = false;
                 ChaseFrameCounter = 0;
             }
+
+            if (Vector3.Distance(transform.position, target.position) < 10)
+            {
+                soundScript.enemyBlambo.Play();
+                blamboAttacking = true;
+            }
         }
 
 
@@ -415,9 +443,57 @@ public class Enemy01AIScript : MonoBehaviour
         if (isAttacking == true)
         {
             uiScript.HealthState++;
+            soundScript.gettingHit.Play();
             isAttacking = false;
         }
 
+        if (vukAttacking)
+        {
+            StartCoroutine(vukSound());
+        }
+
+        if (kieranAttacking)
+        {
+            StartCoroutine(kieranSound());
+        }
+
+        if (timAttacking)
+        {
+            StartCoroutine(timSound());
+        }
+
+        if (blamboAttacking)
+        {
+            StartCoroutine(blamboSound());
+        }
+    }
+
+    public IEnumerator vukSound()
+    {
+        yield return new WaitForSeconds(5f);
+
+        vukAttacking = false;
+    }
+
+    public IEnumerator kieranSound()
+    {
+        yield return new WaitForSeconds(5f);
+
+        kieranAttacking = false;
+    }
+
+    public IEnumerator timSound()
+    {
+        yield return new WaitForSeconds(7f);
+
+        timAttacking = false;
+    }
+
+    public IEnumerator blamboSound()
+    {
+        yield return new WaitForSeconds(9f);
+
+        blamboAttacking = false;
     }
 
     void OnBecameVisible()
