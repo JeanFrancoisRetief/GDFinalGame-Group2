@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1379433964551598589}
   - component: {fileID: 442790171579865414}
   m_Layer: 0
-  m_Name: img (3)
+  m_Name: img_blambo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d31d3b941db211f458fcd57eb0606c2b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 95cf2899db6fca0449aa0ac2ad5f4c71, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 7900598195207154591}
   - component: {fileID: 2098785515677617251}
   m_Layer: 0
-  m_Name: img_vuk
+  m_Name: img_kieran
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,7 +111,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 680899219782565079}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2098785515677617251
 SpriteRenderer:
@@ -153,7 +153,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 91d862a1da15d7949ac0f5c22c793c02, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6317ba4e3b8080940a5f36b7e8ee310b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -194,8 +194,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3433609422063080761}
-  - {fileID: 7900598195207154591}
   - {fileID: 981502228371548887}
+  - {fileID: 7900598195207154591}
   - {fileID: 4877821356309605527}
   - {fileID: 1379433964551598589}
   m_Father: {fileID: 0}
@@ -215,8 +215,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceManagementScript: {fileID: 0}
   uiScript: {fileID: 0}
-  Enemy01Visuals: {fileID: 2139594142544050923}
-  Enemy02Visuals: {fileID: 5250970041531419961}
+  Enemy01Visuals: {fileID: 5250970041531419961}
+  Enemy02Visuals: {fileID: 2139594142544050923}
   Enemy03Visuals: {fileID: 6553004097847196314}
   Enemy04Visuals: {fileID: 178902177602929433}
   slowdownMultiplier: 0.02
@@ -412,7 +412,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 680899219782565079}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2680254698588268520
 SpriteRenderer:

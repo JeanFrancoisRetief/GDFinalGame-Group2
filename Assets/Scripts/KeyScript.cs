@@ -187,13 +187,13 @@ public class KeyScript : MonoBehaviour
             {
                 if (!inKeyPad)
                 {
-                    //hintText.text = "Press Q to exit keypad";
+                    hintText.text = "Press Q to exit keypad";
                     Keypad.SetActive(true);
                     inKeyPad = true;
                 }
                 else
                 {
-                    //hintText.text = "Press Q to use keypad";
+                    hintText.text = "Press Q to use keypad";
                     Keypad.SetActive(false);
                     inKeyPad = false;
                 }
@@ -327,6 +327,9 @@ public class KeyScript : MonoBehaviour
         if (other.CompareTag("Elevator"))
         {
             hintText.text = "";
+
+            Keypad.SetActive(false);
+            inKeyPad = false;
         }
         warningText.text = "";
         hintText.text = "";

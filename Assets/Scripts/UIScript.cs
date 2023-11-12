@@ -8,6 +8,7 @@ public class UIScript : MonoBehaviour
 {
     [Header("Scripts")]
     public ResourceManagementScript resourceManagementScript;
+    public TextingScript textingScript;
    // public Enemy01AIScript enemy01AIScript;
 
     [Header("Panels")]
@@ -61,6 +62,13 @@ public class UIScript : MonoBehaviour
             ResourcesApp.SetActive(false);
             TextingApp.SetActive(true);
             PowerApp.SetActive(false);
+
+            textingScript.notification.SetActive(false);
+        }
+
+        if (TextingApp.active)
+        {
+            textingScript.notification.SetActive(false);
         }
 
         if (Input.GetKeyDown(KeyCode.Y))
@@ -148,7 +156,7 @@ public class UIScript : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.G))
             {
-                SceneManager.LoadScene("GameScene");
+                SceneManager.LoadScene("KaiScene");
             }
         }
     }

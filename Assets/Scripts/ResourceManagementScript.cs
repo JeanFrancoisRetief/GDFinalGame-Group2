@@ -36,7 +36,7 @@ public class ResourceManagementScript : MonoBehaviour
 
     [Space(10)]
     public float staminaValue;
-    public float staminaIncreaseValue = 0.1f;
+    public float staminaIncreaseValue = 0.2f;
     public float staminaDecreaseValue;
 
     [Space(10)]

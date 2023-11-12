@@ -22,6 +22,14 @@ public class ExitScript : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "End")
+        {
+            SceneManager.LoadScene("Credits");
+        }
+    }
+
     //Buttons
     public void OnExitClick()
     {

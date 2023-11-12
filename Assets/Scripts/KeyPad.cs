@@ -124,6 +124,8 @@ public class KeyPad : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         keypad.SetActive(false);
+
+        SceneManager.LoadScene("BasementScene");
     }
 
     public IEnumerator WrongCode()
