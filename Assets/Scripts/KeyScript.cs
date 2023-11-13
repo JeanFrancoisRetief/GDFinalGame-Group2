@@ -23,6 +23,7 @@ public class KeyScript : MonoBehaviour
     public Text hintText;
     public int textFrameCounter;
     public ResourceManagementScript resourceScript;
+    public SoundScript soundScript;
 
     public bool hasKeyOne = false;
     public bool hasKeyTwo = false;
@@ -69,6 +70,7 @@ public class KeyScript : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 hintText.text = "";
+                soundScript.keys.Play();
                 hasKeyOne = true;
                 KeyOne.SetActive(false);
             }
@@ -80,6 +82,7 @@ public class KeyScript : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 hintText.text = "";
+                soundScript.keys.Play();
                 hasKeyTwo = true;
                 KeyTwo.SetActive(false);
             }
@@ -102,6 +105,7 @@ public class KeyScript : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 hintText.text = "";
+                soundScript.keys.Play();
                 hasKeyFour = true;
                 KeyFour.SetActive(false);
             }
@@ -116,6 +120,7 @@ public class KeyScript : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Q))
                 {
                     hintText.text = "";
+                    soundScript.doorOpen.Play();
                     DoorOne.SetActive(false);
                 }
             }
@@ -134,6 +139,7 @@ public class KeyScript : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Q))
                 {
                     hintText.text = "";
+                    soundScript.doorOpen.Play();
                     DoorTwo.SetActive(false);
                 }
             }
@@ -152,6 +158,7 @@ public class KeyScript : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Q))
                 {
                     hintText.text = "";
+                    soundScript.doorOpen.Play();
                     DoorThree.SetActive(false);
                 }
             }
@@ -170,6 +177,7 @@ public class KeyScript : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Q))
                 {
                     hintText.text = "";
+                    soundScript.doorOpen.Play();
                     DoorFour.SetActive(false);
                 }
             }

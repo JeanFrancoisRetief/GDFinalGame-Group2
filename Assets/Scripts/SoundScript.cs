@@ -14,6 +14,13 @@ public class SoundScript : MonoBehaviour
     public AudioSource floorAmbience;
     public AudioSource stairsAmbience;
     public AudioSource chargePhone;
+    public AudioSource doorOpen;
+    public AudioSource keys;
+
+    [Header("Keypad Sounds")]
+    public AudioSource rightAnswer;
+    public AudioSource wrongAnswer;
+    public AudioSource buttonClick;
 
     [Header("Player Sounds")]
     public AudioSource gettingHit;
@@ -21,4 +28,5 @@ public class SoundScript : MonoBehaviour
     public AudioSource walking;
     public AudioSource running;
     public AudioSource flashlight;
+    public AudioSource textNotification;
 }

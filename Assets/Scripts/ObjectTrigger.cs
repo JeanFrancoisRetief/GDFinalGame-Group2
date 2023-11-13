@@ -17,6 +17,7 @@ public class ObjectTrigger : MonoBehaviour
     public bool isBroken;
 
     public KeyScript keyScript;
+    public SoundScript soundScript;
 
 
     public bool isViewingKeyObject;
@@ -64,6 +65,7 @@ public class ObjectTrigger : MonoBehaviour
             if(isViewingKeyObject && Input.GetKeyDown(KeyCode.B)) //break
             {
                 InteractTextHint.text = "";
+                soundScript.keys.Play();
                 keyScript.hasKeyThree = true;
                 keyScript.KeyThree.SetActive(false);
 
