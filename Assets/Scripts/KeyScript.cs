@@ -57,8 +57,22 @@ public class KeyScript : MonoBehaviour
         if(resourceScript.TRIGGERED == true)
         {
             hasKeyFour = true;
+            StartCoroutine(generators());
             KeyFour.SetActive(false);
         }
+    }
+
+    public IEnumerator generators()
+    {
+        soundScript.generator.Play();
+     
+        soundScript.generator2.Play();
+
+        yield return new WaitForSeconds(10f);
+
+        soundScript.generator.volume = soundScript.generator.volume / 2;
+
+        soundScript.generator2.volume = soundScript.generator2.volume / 2;
     }
 
     private void OnTriggerStay(Collider other)

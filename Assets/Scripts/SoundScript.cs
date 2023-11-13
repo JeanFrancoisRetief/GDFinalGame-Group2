@@ -13,10 +13,15 @@ public class SoundScript : MonoBehaviour
     [Header("Environment Sounds")]
     public AudioSource floorAmbience;
     public AudioSource floorAmbience2;
+    public AudioSource floorAmbience3;
+    public AudioSource floorAmbience4;
     public AudioSource stairsAmbience;
     public AudioSource chargePhone;
+    public AudioSource phoneDead;
     public AudioSource doorOpen;
     public AudioSource keys;
+    public AudioSource generator;
+    public AudioSource generator2;
 
     public int environmentalNoisesCounter;
     public int randomCounter;
@@ -48,14 +53,24 @@ public class SoundScript : MonoBehaviour
     {
         randomCounter = UnityEngine.Random.Range(0, 100);
 
-        if (randomCounter == 50)
+        if (randomCounter == 25)
         {
             floorAmbience.Play();
         }
 
-        if (randomCounter == 100)
+        if (randomCounter == 50)
         {
             floorAmbience2.Play();
+        }
+
+        if (randomCounter == 75)
+        {
+            floorAmbience3.Play();
+        }
+
+        if (randomCounter == 100)
+        {
+            floorAmbience4.Play();
         }
     }
 }

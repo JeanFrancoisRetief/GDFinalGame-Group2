@@ -85,6 +85,7 @@ public class ResourceManagementScript : MonoBehaviour
     public float powerCheckerConstant = 0.1f;
     public float powerCheckerFlashlight = 0;
     public float powerCheckerOther = 0;
+    private bool isPhoneDead;
 
 
 
@@ -216,6 +217,18 @@ public class ResourceManagementScript : MonoBehaviour
         {
             powerLeft = 0;
             PowerLeftText.text = "0%";
+
+            isPhoneDead = true;
+        }
+
+        if (isPhoneDead)
+        {
+            StartCoroutine(phoneDead());
+        }
+
+        if (powerLeft > 0)
+        {
+            isPhoneDead = false;
         }
 
         //input
@@ -480,8 +493,6 @@ public class ResourceManagementScript : MonoBehaviour
             isSprinting = false;
         }
 
-
-
         staminaFrameCounter++;
 
         //increase stamina while not walking or sprinting.
@@ -590,6 +601,21 @@ public class ResourceManagementScript : MonoBehaviour
         yield return new WaitForSeconds(3f);
 
         isRunningCheck = false;
+    }
+
+    public IEnumerator phoneDead()
+    {
+        soundScript.phoneDead.Play();
+
+        yield return new WaitForSeconds(3f);
+
+        soundScript.phoneDead.volume = 0;
+
+        if (powerLeft > 0)
+        {
+            soundScript.phoneDead.volume = 0.05f;
+            isPhoneDead = false;
+        }
     }
 
     /*

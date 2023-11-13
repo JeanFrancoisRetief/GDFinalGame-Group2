@@ -231,17 +231,14 @@ public class Enemy01AIScript : MonoBehaviour
             {
                 transform.Translate(direction * slowdownMultiplier);
                 isChasing = true;
+
+                soundScript.enemyVuk.Play();
+                vukAttacking = true;
             }
             else
             {
                 isChasing = false;
                 ChaseFrameCounter = 0;
-            }
-
-            if (Vector3.Distance(transform.position, target.position) < 10)
-            {
-                soundScript.enemyVuk.Play();
-                vukAttacking = true;
             }
         }
         if (enemyType == 2)
@@ -279,17 +276,14 @@ public class Enemy01AIScript : MonoBehaviour
             {
                 transform.Translate(direction * slowdownMultiplier);
                 isChasing = true;
+
+                soundScript.enemyKieran.Play();
+                kieranAttacking = true;
             }
             else
             {
                 isChasing = false;
                 ChaseFrameCounter = 0;
-            }
-
-            if (Vector3.Distance(transform.position, target.position) < 10)
-            {
-                soundScript.enemyKieran.Play();
-                kieranAttacking = true;
             }
         }
         if (enemyType == 3)
@@ -330,17 +324,14 @@ public class Enemy01AIScript : MonoBehaviour
             {
                 transform.Translate(direction * slowdownMultiplier);
                 isChasing = true;
+
+                soundScript.enemyTim.Play();
+                timAttacking = true;
             }
             else
             {
                 isChasing = false;
                 ChaseFrameCounter = 0;
-            }
-
-            if (Vector3.Distance(transform.position, target.position) < 10)
-            {
-                soundScript.enemyTim.Play();
-                timAttacking = true;
             }
         }
         if (enemyType == 4)
@@ -391,17 +382,14 @@ public class Enemy01AIScript : MonoBehaviour
             {
                 transform.Translate(direction * slowdownMultiplier);
                 isChasing = true;
+
+                soundScript.enemyBlambo.Play();
+                blamboAttacking = true;
             }
             else
             {
                 isChasing = false;
                 ChaseFrameCounter = 0;
-            }
-
-            if (Vector3.Distance(transform.position, target.position) < 10)
-            {
-                soundScript.enemyBlambo.Play();
-                blamboAttacking = true;
             }
         }
 
