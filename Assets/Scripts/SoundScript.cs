@@ -53,24 +53,29 @@ public class SoundScript : MonoBehaviour
     {
         randomCounter = UnityEngine.Random.Range(0, 100);
 
-        if (randomCounter == 25)
+        if (randomCounter == 20)
         {
             floorAmbience.Play();
         }
 
-        if (randomCounter == 50)
+        if (randomCounter == 40)
         {
             floorAmbience2.Play();
         }
 
-        if (randomCounter == 75)
+        if (randomCounter == 60)
         {
             floorAmbience3.Play();
         }
 
-        if (randomCounter == 100)
+        if (randomCounter == 80)
         {
             floorAmbience4.Play();
+        }
+
+        if (randomCounter == 100)
+        {
+            stairsAmbience.Play();
         }
     }
 }
