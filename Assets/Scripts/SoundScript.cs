@@ -12,10 +12,14 @@ public class SoundScript : MonoBehaviour
 
     [Header("Environment Sounds")]
     public AudioSource floorAmbience;
+    public AudioSource floorAmbience2;
     public AudioSource stairsAmbience;
     public AudioSource chargePhone;
     public AudioSource doorOpen;
     public AudioSource keys;
+
+    public int environmentalNoisesCounter;
+    public int randomCounter;
 
     [Header("Keypad Sounds")]
     public AudioSource rightAnswer;
@@ -29,4 +33,29 @@ public class SoundScript : MonoBehaviour
     public AudioSource running;
     public AudioSource flashlight;
     public AudioSource textNotification;
+
+    private void Update()
+    {
+        environmentalNoisesCounter++;
+        if (environmentalNoisesCounter == 60)
+        {
+            CheckRandomCounter();
+            environmentalNoisesCounter = 0;
+        }
+    }
+
+    public void CheckRandomCounter()
+    {
+        randomCounter = UnityEngine.Random.Range(0, 100);
+
+        if (randomCounter == 50)
+        {
+            floorAmbience.Play();
+        }
+
+        if (randomCounter == 100)
+        {
+            floorAmbience2.Play();
+        }
+    }
 }
