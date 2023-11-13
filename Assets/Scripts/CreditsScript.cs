@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class CreditsScript : MonoBehaviour
 {
+    public GameObject CreditsText;
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.C))
@@ -12,5 +13,10 @@ public class CreditsScript : MonoBehaviour
             Debug.Log("C");
             SceneManager.LoadScene("MainMenu");
         }
+
+        CreditsText.transform.Translate(Vector3.up/5);
+
     }
+
+
 }

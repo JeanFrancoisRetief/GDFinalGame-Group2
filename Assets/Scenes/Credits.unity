@@ -151,7 +151,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1032697336}
   m_Father: {fileID: 165693266}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -211,6 +212,7 @@ GameObject:
   - component: {fileID: 165693264}
   - component: {fileID: 165693263}
   - component: {fileID: 165693262}
+  - component: {fileID: 165693267}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -230,6 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45ef20fe9091af0488d8298de3f3e451, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CreditsText: {fileID: 1032697335}
 --- !u!114 &165693263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,6 +314,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &165693267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165693261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c44fec2d467ff62429b665554389dd86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &675823607
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,6 +412,104 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1032697335
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1032697336}
+  - component: {fileID: 1032697338}
+  - component: {fileID: 1032697337}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1032697336
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032697335}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 123938531}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -2180}
+  m_SizeDelta: {x: 1920, y: 3240}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1032697337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032697335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 20
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "S.O.D.A\nSchool Of Digital Arts\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nLead
+    Visuals, Lighting & Sound                  \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t   
+    \tMikhail Govind\r - 2425225\r\nLead Programming (AI, tiggers & Resource Management
+    System)\t\t\t\t\t\t\t\t                         Jean-Francois Retief\r - 2458318\r\nLead
+    Level Designer & Asset Aggregator \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tMalakai
+    Braam\r - 2457821\r\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\r\n\n\n\n\n\n\n\n\n----------------------------------------------------------\nAdditional
+    Templates and Resources Used\r\n----------------------------------------------------------\nUnity
+    First Person Template (to provide the basic First Person Character controller,
+    compatible with slopes and stairs)\r\n-----\nVisual Assets used:\r\nFrom Sketchfab.com\n-----\nGenerator
+    Trailer \r\nHospital Doors Double Swing \r\nElevator \r\nBeer Bottle\r\nCoffee
+    Cup \r\nKey with Tag \r\nMessenger Bag\r\nDesk 3D \r\nFlat Screen Television\r\nFree
+    Wall Outlet \r\nLaptop Notebook\r\nLight Fixture \r\n-----\nSound Assets used:\nFrom
+    Freesound.com\n-----\nGlitch 1 \r\nGlitch 2 \r\nGrowl Clean \r\nMonster \r\nMonster
+    Hiss \r\nDark Ambience\r\nCreepy Background noise \r\nHaunted Hall \r\nDementia
+    \r\nAttack\r\nFootsteps on wood \r\nRunning Hard Surface \r\n---\nFrom Pixabay.com\n---\nPhone
+    Notification\r\nDark Whispering Ambience\r\nGenerator\r\nElectric Hum\r\nFrom
+    OpenGameArt.org [9]\r\n16 Button Clicks\r\nPicked Coin Echo\r\nDoor Open/ Door
+    Close\r\nKey Pickup\r\nPoint Bell\r\nZippo Click Sound\r\n\r-----\nTextures/Materials\r
+    used:\nFrom FreePBR.com \n-----\nBark \r\nFibrous plaster \r\nConcrete \r\nBricks
+    mortar \r\nGross Dirty Tiles \r\n\n\n\n\n\n\n\nThanks for playing!\n"
+--- !u!222 &1032697338
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032697335}
+  m_CullTransparentMesh: 1
 --- !u!1 &1536893832
 GameObject:
   m_ObjectHideFlags: 0
