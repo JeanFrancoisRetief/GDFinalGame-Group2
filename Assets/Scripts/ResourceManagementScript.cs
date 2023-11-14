@@ -213,12 +213,13 @@ public class ResourceManagementScript : MonoBehaviour
         //display
         PowerLeftText.text = (Mathf.Floor(powerLeft)).ToString() + "%";
 
-        if(powerLeft < 0)
+        if(powerLeft <= 0)
         {
             powerLeft = 0;
             PowerLeftText.text = "0%";
 
             isPhoneDead = true;
+            isFlashlightOn = false;
         }
 
         if (isPhoneDead)
@@ -229,29 +230,28 @@ public class ResourceManagementScript : MonoBehaviour
         if (powerLeft > 0)
         {
             isPhoneDead = false;
-        }
 
-        //input
-        if(Input.GetKeyDown(KeyCode.F) && !isFlashlightOn)
-        {
-            isFlashlightOn = true;
-            soundScript.flashlight.Play();
-            FlashLightOn();
-        } 
-        else if (Input.GetKeyDown(KeyCode.F) && isFlashlightOn)
-        {
-            isFlashlightOn = false;
-            soundScript.flashlight.Play();
-            FlashLightOff();
+            //input
+            if (Input.GetKeyDown(KeyCode.F) && !isFlashlightOn)
+            {
+                isFlashlightOn = true;
+                soundScript.flashlight.Play();
+                FlashLightOn();
+            }
+            else if (Input.GetKeyDown(KeyCode.F) && isFlashlightOn)
+            {
+                isFlashlightOn = false;
+                soundScript.flashlight.Play();
+                FlashLightOff();
+            }
         }
-
   
 
         //checkers
         //2
         if (isFlashlightOn)
         {
-            powerCheckerFlashlight = 0.05f;
+            powerCheckerFlashlight = 0.005f;
         }
         else
         {
