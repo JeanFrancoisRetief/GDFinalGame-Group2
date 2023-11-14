@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TextingScript : MonoBehaviour
 {
+    public SoundScript soundScript;
     public GameObject Panel1;
     public GameObject Panel2;
     public GameObject Panel3;
@@ -11,6 +12,7 @@ public class TextingScript : MonoBehaviour
     public GameObject Panel5;
     public GameObject Panel6;
     public GameObject Panel7;
+    public GameObject notification;
     
     // Start is called before the first frame update
     void Start()
@@ -22,7 +24,7 @@ public class TextingScript : MonoBehaviour
         Panel5.SetActive(false);
         Panel6.SetActive(false);
         Panel7.SetActive(false);
-       
+        notification.SetActive(false);
     }
 
     // Update is called once per frame
@@ -36,6 +38,9 @@ public class TextingScript : MonoBehaviour
         if(other.tag == "Text1")//third floor after spawn
         {
             Panel1.SetActive(true);
+            soundScript.textNotification.Play();
+            notification.SetActive(true);
+
             Panel2.SetActive(false);
             Panel3.SetActive(false);
             Panel4.SetActive(false);
@@ -48,6 +53,9 @@ public class TextingScript : MonoBehaviour
         {
             Panel1.SetActive(false);
             Panel2.SetActive(true);
+            soundScript.textNotification.Play();
+            notification.SetActive(true);
+
             Panel3.SetActive(false);
             Panel4.SetActive(false);
             Panel5.SetActive(false);
@@ -60,6 +68,9 @@ public class TextingScript : MonoBehaviour
             Panel1.SetActive(false);
             Panel2.SetActive(false);
             Panel3.SetActive(true);
+            soundScript.textNotification.Play();
+            notification.SetActive(true);
+
             Panel4.SetActive(false);
             Panel5.SetActive(false);
             Panel6.SetActive(false);
@@ -72,6 +83,9 @@ public class TextingScript : MonoBehaviour
             Panel2.SetActive(false);
             Panel3.SetActive(false);
             Panel4.SetActive(true);
+            soundScript.textNotification.Play();
+            notification.SetActive(true);
+
             Panel5.SetActive(false);
             Panel6.SetActive(false);
             Panel7.SetActive(false);
@@ -84,6 +98,9 @@ public class TextingScript : MonoBehaviour
             Panel3.SetActive(false);
             Panel4.SetActive(false);
             Panel5.SetActive(true);
+            soundScript.textNotification.Play();
+            notification.SetActive(true);
+
             Panel6.SetActive(false);
             Panel7.SetActive(false);
             other.enabled = false;
@@ -96,6 +113,9 @@ public class TextingScript : MonoBehaviour
             Panel4.SetActive(false);
             Panel5.SetActive(false);
             Panel6.SetActive(true);
+            soundScript.textNotification.Play();
+            notification.SetActive(true);
+
             Panel7.SetActive(false);
             other.enabled = false;
         }
@@ -108,6 +128,9 @@ public class TextingScript : MonoBehaviour
             Panel5.SetActive(false);
             Panel6.SetActive(false);
             Panel7.SetActive(true);
+            soundScript.textNotification.Play();
+            notification.SetActive(true);
+
             other.enabled = false;
         }
         if (other.tag == "Text8")

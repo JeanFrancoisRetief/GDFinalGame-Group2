@@ -5,12 +5,18 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Playground.unity
-    guid: 707acc8dffb72b144bb1ffbe1c965f3d
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: e32dd1f7a5e99cf408b7ff1bf6436e19
   - enabled: 1
     path: Assets/Scenes/KaiScene.unity
     guid: 55096dd5bac5378448541ed297ba9611
+  - enabled: 1
+    path: Assets/Scenes/BasementScene.unity
+    guid: 6ca527d124dfd43498889d184ab88760
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: e0424d03450fece4189f7409bfe2d926
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7,
       type: 2}

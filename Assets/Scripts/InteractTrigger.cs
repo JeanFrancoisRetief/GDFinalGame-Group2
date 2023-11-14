@@ -7,6 +7,9 @@ public class InteractTrigger : MonoBehaviour
 {
     public ResourceManagementScript resourceManagementScript;
     public GameObject Interact_E_Icon;
+
+    public KeyScript keyScript;
+    public SoundScript soundScript;
     
     // Start is called before the first frame update
     void Start()
@@ -42,6 +45,8 @@ public class InteractTrigger : MonoBehaviour
         {
             
             resourceManagementScript.CanInteract = true;
+
+            keyScript.hintText.text = "Press 'E' to charge generator";
             
         }
     }
@@ -61,6 +66,8 @@ public class InteractTrigger : MonoBehaviour
         {
             
             resourceManagementScript.CanInteract = false;
+
+            keyScript.hintText.text = "";
         }
     }
 }

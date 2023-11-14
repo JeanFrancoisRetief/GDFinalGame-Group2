@@ -23,6 +23,7 @@ public class KeyScript : MonoBehaviour
     public Text hintText;
     public int textFrameCounter;
     public ResourceManagementScript resourceScript;
+    public SoundScript soundScript;
 
     public bool hasKeyOne = false;
     public bool hasKeyTwo = false;
@@ -56,8 +57,22 @@ public class KeyScript : MonoBehaviour
         if(resourceScript.TRIGGERED == true)
         {
             hasKeyFour = true;
+            StartCoroutine(generators());
             KeyFour.SetActive(false);
         }
+    }
+
+    public IEnumerator generators()
+    {
+        soundScript.generator.Play();
+     
+        soundScript.generator2.Play();
+
+        yield return new WaitForSeconds(10f);
+
+        soundScript.generator.volume = soundScript.generator.volume / 2;
+
+        soundScript.generator2.volume = soundScript.generator2.volume / 2;
     }
 
     private void OnTriggerStay(Collider other)
@@ -69,6 +84,7 @@ public class KeyScript : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 hintText.text = "";
+                soundScript.keys.Play();
                 hasKeyOne = true;
                 KeyOne.SetActive(false);
             }
@@ -80,6 +96,7 @@ public class KeyScript : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 hintText.text = "";
+                soundScript.keys.Play();
                 hasKeyTwo = true;
                 KeyTwo.SetActive(false);
             }
@@ -102,6 +119,7 @@ public class KeyScript : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 hintText.text = "";
+                soundScript.keys.Play();
                 hasKeyFour = true;
                 KeyFour.SetActive(false);
             }
@@ -116,6 +134,7 @@ public class KeyScript : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Q))
                 {
                     hintText.text = "";
+                    soundScript.doorOpen.Play();
                     DoorOne.SetActive(false);
                 }
             }
@@ -134,6 +153,7 @@ public class KeyScript : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Q))
                 {
                     hintText.text = "";
+                    soundScript.doorOpen.Play();
                     DoorTwo.SetActive(false);
                 }
             }
@@ -152,6 +172,7 @@ public class KeyScript : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Q))
                 {
                     hintText.text = "";
+                    soundScript.doorOpen.Play();
                     DoorThree.SetActive(false);
                 }
             }
@@ -170,6 +191,7 @@ public class KeyScript : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Q))
                 {
                     hintText.text = "";
+                    soundScript.doorOpen.Play();
                     DoorFour.SetActive(false);
                 }
             }
@@ -187,13 +209,13 @@ public class KeyScript : MonoBehaviour
             {
                 if (!inKeyPad)
                 {
-                    //hintText.text = "Press Q to exit keypad";
+                    hintText.text = "Press Q to exit keypad";
                     Keypad.SetActive(true);
                     inKeyPad = true;
                 }
                 else
                 {
-                    //hintText.text = "Press Q to use keypad";
+                    hintText.text = "Press Q to use keypad";
                     Keypad.SetActive(false);
                     inKeyPad = false;
                 }
@@ -327,6 +349,9 @@ public class KeyScript : MonoBehaviour
         if (other.CompareTag("Elevator"))
         {
             hintText.text = "";
+
+            Keypad.SetActive(false);
+            inKeyPad = false;
         }
         warningText.text = "";
         hintText.text = "";

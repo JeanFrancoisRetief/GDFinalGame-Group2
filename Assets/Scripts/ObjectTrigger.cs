@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,8 +14,10 @@ public class ObjectTrigger : MonoBehaviour
     public GameObject UIObject5;
     public GameObject UIObject1Broken;
     public Text InteractTextHint;
+    public bool isBroken;
 
     public KeyScript keyScript;
+    public SoundScript soundScript;
 
 
     public bool isViewingKeyObject;
@@ -33,13 +36,10 @@ public class ObjectTrigger : MonoBehaviour
         ObjectInteractPanel.SetActive(false);
 
         isViewingKeyObject = false;
+
+        isBroken = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "ObjectTrigger1" || other.tag == "ObjectTrigger2" || other.tag == "ObjectTrigger3" || other.tag == "ObjectTrigger4" || other.tag == "ObjectTrigger5")
@@ -65,13 +65,14 @@ public class ObjectTrigger : MonoBehaviour
             if(isViewingKeyObject && Input.GetKeyDown(KeyCode.B)) //break
             {
                 InteractTextHint.text = "";
+                soundScript.keys.Play();
                 keyScript.hasKeyThree = true;
                 keyScript.KeyThree.SetActive(false);
 
                 //break effect
                 UIObject1Broken.SetActive(true);
                 UIObject1.SetActive(false);
-                other.enabled = false;
+                isBroken = true;
             }
 
         }
@@ -129,6 +130,11 @@ public class ObjectTrigger : MonoBehaviour
             ObjectInteractPanel.SetActive(false);
 
             isViewingKeyObject = false;
+        }
+
+        if (other.tag == "ObjectTrigger1" && isBroken)
+        {
+            other.enabled = false;
         }
     }
 }
