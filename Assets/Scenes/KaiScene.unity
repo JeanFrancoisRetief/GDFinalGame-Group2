@@ -33925,6 +33925,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62fe4bb19b189094db9c465db60710af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &900648097 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8616685848737228371, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+    type: 3}
+  m_PrefabInstance: {fileID: 5393215579111688471}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900648088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55919ac34a26952479f3fc91f777b2fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &900648098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81559,8 +81571,13 @@ PrefabInstance:
     - target: {fileID: 5128078261729981829, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
       propertyPath: staminaIncreaseValue
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 5128078261729981829, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: firstPersonController
+      value: 
+      objectReference: {fileID: 900648097}
     - target: {fileID: 6961548658798911495, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
       propertyPath: m_Range

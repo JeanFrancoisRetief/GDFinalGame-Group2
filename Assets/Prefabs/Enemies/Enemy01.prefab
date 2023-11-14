@@ -215,6 +215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceManagementScript: {fileID: 0}
   uiScript: {fileID: 0}
+  soundScript: {fileID: 0}
   Enemy01Visuals: {fileID: 5250970041531419961}
   Enemy02Visuals: {fileID: 2139594142544050923}
   Enemy03Visuals: {fileID: 6553004097847196314}
@@ -243,7 +244,7 @@ MonoBehaviour:
   Enemy04powRange: 20
   isChasing: 0
   ChaseFrameCounter: 0
-  chasetime: 5
+  chasetime: 10
   isAttacking: 0
   inView: 0
 --- !u!23 &6462940756571215650

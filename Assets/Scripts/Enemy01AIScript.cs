@@ -63,7 +63,7 @@ public class Enemy01AIScript : MonoBehaviour
     [Header("Chase")]
     public bool isChasing = false;
     public int ChaseFrameCounter = 0;
-    public float chasetime = 5;
+    public float chasetime = 10;
 
     public bool isAttacking;
 

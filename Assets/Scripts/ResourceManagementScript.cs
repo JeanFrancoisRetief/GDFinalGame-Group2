@@ -1,3 +1,4 @@
+using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class ResourceManagementScript : MonoBehaviour
     [Header("Player")]
     public GameObject PlayerPrefab;
     public Vector3 StopPosition;
+    public FirstPersonController firstPersonController;
 
     [Header("Frame counters")]
     public int staminaFrameCounter;
@@ -496,14 +498,14 @@ public class ResourceManagementScript : MonoBehaviour
         staminaFrameCounter++;
 
         //increase stamina while not walking or sprinting.
-        if(staminaFrameCounter >= 60)
+        if(staminaFrameCounter >= 60 * 2)
         {
             if(!isWalking && (staminaValue <= 100))
             {
                 staminaValue += staminaIncreaseValue;
             }
 
-            StopPosition = PlayerPrefab.transform.position;
+            //StopPosition = PlayerPrefab.transform.position;
             staminaFrameCounter = 0;
         }
 
@@ -522,17 +524,25 @@ public class ResourceManagementScript : MonoBehaviour
         }
 
         staminaValue -= staminaDecreaseValue;
-        
 
-        if(staminaValue <= 0)
+
+        if (staminaValue <= 0)
         {
+            //PlayerPrefab.transform.position = StopPosition;
+            firstPersonController.MoveSpeed = 2f;
+            firstPersonController.SprintSpeed = 0f;
+
             staminaValue = 0;
-            if(!hasPlayed)
+            if (!hasPlayed)
             {
                 soundScript.lowStamina.Play();
                 hasPlayed = true;
             }
-            PlayerPrefab.transform.position = StopPosition;
+        }
+        else
+        {
+            firstPersonController.MoveSpeed = 4f;
+            firstPersonController.SprintSpeed = 6f;
         }
 
         if (isWalking)
@@ -579,6 +589,11 @@ public class ResourceManagementScript : MonoBehaviour
         {
             soundScript.running.Stop();
             isRunningCheck = false;
+        }
+
+        if (soundScript.running.isPlaying)
+        {
+            soundScript.walking.Stop();
         }
     }
 
